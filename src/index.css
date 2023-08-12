@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+
+:root {
+  --primary:  #9e5d02;
+  --secondary: #adb5bd;
+  --success: #57361d;
+  --light: #f6dfb7db;
+  --dark: #212529;
+}
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Poppins";
+}
+* {
+  margin: 0;
+}
+p {
+  margin: 20px 0;
+}
+button {
+  border: 0;
+  padding: 8px;
+  border-radius: 4px;
+  color: white;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+/* banner */
+.banner {
+  height: 600px;
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+}
+
+.banner img {
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.banner-bg-dark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.banner-txt {
+  position: absolute;
+  font-family: "BernhardScriptW01-Light";
+  font-style: normal;
+}
+/* navbar */
+
+
+/* page content */
+
+
+/* help layout */
+
+
+/* faq */
+
+
+/* careers list */
+
+
+/* careers details */
+
+
+/* breadcrumbs */
