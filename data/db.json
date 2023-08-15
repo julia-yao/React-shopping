@@ -1,19 +1,26 @@
 {
-  "posts": [
+  "meals": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "德國培根早午餐",
+      "price": 500,
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/07.jpg"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "德國培根早午餐",
+      "price": 500,
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/07.jpg"
+    },{
+      "id": 3,
+      "name": "香烤雞腿早午餐",
+      "price": 500,
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/08.jpg"
+    },{
+      "id": 4,
+      "name": "煙燻鮭魚早午餐",
+      "price": 500,
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/11.jpg"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
