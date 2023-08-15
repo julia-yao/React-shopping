@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
 
+
 :root {
   --primary:  #9e5d02;
   --secondary: #adb5bd;
@@ -10,15 +11,12 @@
 }
 body {
   margin: 0;
-  padding: 20px;
   font-family: "Poppins";
 }
 * {
   margin: 0;
 }
-p {
-  margin: 20px 0;
-}
+
 button {
   border: 0;
   padding: 8px;
@@ -55,8 +53,52 @@ button {
   font-family: "BernhardScriptW01-Light";
   font-style: normal;
 }
-/* navbar */
-
+/* ProductMask */
+.ProductMask{
+  width: 100%;
+  display: flex;
+}
+.maskcard{
+  overflow: hidden;
+  position: relative;
+}
+.maskcard img{
+  vertical-align: middle;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+.maskcard .mask{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,.5);           
+  opacity: 1;
+  transition: opacity 0.6s;
+}
+.maskcard:hover .mask{
+  opacity: 0;
+}
+.maskcard .txt{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 12px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.font-family{ 
+  color: #fff;
+  display: block;
+  text-shadow: 1px 1px 1px rgb(83, 81, 81);
+  font-family: 'Oswald', sans-serif;
+}
 
 /* page content */
 

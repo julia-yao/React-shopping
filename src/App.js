@@ -8,10 +8,13 @@ import {
 //pages
 import Home from './pages/Home'
 import Products from './pages/Products'
-import Help from './pages/Help'
 
 //layout
 import RootLayout from './layout/RootLayout'
+import HelpLayout from './layout/HelpLayout'
+import Faq from './pages/help/Faq'
+import Contact from './pages/help/Contact'
+import NotFound from './pages/NotFound'
 
 
 const router = 
@@ -20,7 +23,12 @@ createBrowserRouter(
     <Route path="/"  element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path='products' element={<Products />} />
-      <Route path='help' element={<Help />} />
+      <Route path='help' element={<HelpLayout />}>
+        <Route path='faq' element={<Faq />} />
+        <Route path='contact' element={<Contact />} />
+      </Route>
+      
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 )

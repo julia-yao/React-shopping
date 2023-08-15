@@ -1,18 +1,16 @@
+import { Container,Row,Col } from 'react-bootstrap';
 import Banner from "./home/Banner";
-
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import MajorProduct from "./home/MajorProduct";
+import ProductMask from "./home/ProductMask";
 
 export default function Home() {
   return (
     <Container>
       <Row>
         <Col>
-            <Banner></Banner>
-            <MajorProduct></MajorProduct>
-
+            <Banner />
+            <MajorProduct />
+            <ProductMask />
         </Col>
       </Row>
     </Container>
