@@ -4,23 +4,74 @@
       "id": 1,
       "name": "德國培根早午餐",
       "price": 500,
-      "url": "https://sarabethsrestaurants.jp/_img/page/menu/07.jpg"
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/07.jpg",
+      "info": "使用農場飼養雞蛋和煙燻培根，配上當日現作鬆餅和新鮮沙拉。",
+      "danger": "雞蛋/培根/小麥麵粉"
     },
     {
       "id": 2,
       "name": "德國培根早午餐",
       "price": 500,
-      "url": "https://sarabethsrestaurants.jp/_img/page/menu/07.jpg"
-    },{
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/09.jpg",
+      "info": "使用農場飼養雞蛋做成歐姆蛋和煙燻培根，配上當日現作鬆餅和新鮮沙拉。",
+      "danger": "雞蛋/培根"
+    },
+    {
       "id": 3,
       "name": "香烤雞腿早午餐",
       "price": 500,
-      "url": "https://sarabethsrestaurants.jp/_img/page/menu/08.jpg"
-    },{
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/10.jpg",
+      "info": "使用農場飼養雞蛋和煙燻培根，配上當日現作鬆餅。",
+      "danger": "雞蛋/小麥麵粉"
+    },
+    {
       "id": 4,
       "name": "煙燻鮭魚早午餐",
       "price": 500,
-      "url": "https://sarabethsrestaurants.jp/_img/page/menu/11.jpg"
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/11.jpg",
+      "info": "使用農場飼養雞蛋和煙燻培根，配上當日現作鬆餅。",
+      "danger": "雞蛋/魚/小麥麵粉"
+    },
+    {
+      "id": 5,
+      "name": "經典早午餐",
+      "price": 500,
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/10.jpg",
+      "info": "使用農場飼養雞蛋和煙燻培根，配上當日現作鬆餅。",
+      "danger": "雞蛋/香腸/小麥麵粉"
+    },
+    {
+      "id": 6,
+      "name": "植物肉丸沙拉",
+      "price": 380,
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/22.jpg",
+      "info": "農場香菇做成的素肉排用番茄醬烹煮，配上新鮮沙拉。",
+      "danger": "黃豆/小麥麵粉"
+    },
+    {
+      "id": 7,
+      "name": "香煎雞肉沙拉",
+      "price": 420,
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/23.jpg",
+      "info": "使用農場飼養嚴選後腿雞肉和青醬醬汁，配上新鮮沙拉。",
+      "danger": "堅果醬汁"
+    },
+    {
+      "id": 8,
+      "name": "堅果藜麥沙拉",
+      "price": 400,
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/24.jpg",
+      "info": "使用新鮮五種堅果，配上新鮮沙拉萵苣。",
+      "danger": "堅果"
+    },
+    {
+      "id": 9,
+      "name": "手打牛肉漢堡",
+      "price": 500,
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/10.jpg",
+      "info": "使用紐西蘭牛肉和煙燻培根醬汁，配上歐式麵包。",
+      "danger": "牛肉/香腸/小麥麵粉"
     }
   ]
+
 }

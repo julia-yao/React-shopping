@@ -20,26 +20,26 @@ export default function HelpLayout() {
                 <p className="p-3 p-lg-4">Sara's Lunch 是由兩位女性共同創立，結合了新鮮直送的作物和細緻烘焙的咖啡，把為家人準備的餐點放上餐桌，希望與朋友共享歡聚時刻！</p>
               </Col>
               <Col lg={5}>
-                <div class="col d-flex align-items-center mb-3">
-                  <i class="bi bi-telephone-fill text-warning h2 p-3"></i>
+                <div className="col d-flex align-items-center mb-3">
+                  <i className="bi bi-telephone-fill text-warning h2 p-3"></i>
                   <div>
-                    <span class="h6 text-warning">CALL US</span>
-                    <h4 class="text-success fw-bold">0914-000-222</h4>
+                    <span className="h6 text-warning">CALL US</span>
+                    <h4 className="text-success fw-bold">0914-000-222</h4>
                   </div>
                 </div>
                 
-                <div class="col d-flex align-items-center mb-3">
-                  <i class="bi bi-envelope-fill text-warning h2 p-3"></i>
+                <div className="col d-flex align-items-center mb-3">
+                  <i className="bi bi-envelope-fill text-warning h2 p-3"></i>
                   <div>
-                    <span class="h6 text-warning">TELL US</span>
-                    <h4 class="text-success fw-bold">saraslunch@gmail.com</h4>
+                    <span className="h6 text-warning">TELL US</span>
+                    <h4 className="text-success fw-bold">saraslunch@gmail.com</h4>
                   </div>
                 </div>
-                <div class="col d-flex align-items-start mb-3">
-                  <i class="bi bi-clock-fill text-warning h2 p-3"></i>
+                <div className="col d-flex align-items-start mb-3">
+                  <i className="bi bi-clock-fill text-warning h2 p-3"></i>
                   <div>
-                    <span class="h6 text-warning">OPENING TIME</span>
-                    <h4 class="text-success fw-bold">
+                    <span className="h6 text-warning">OPENING TIME</span>
+                    <h4 className="text-success fw-bold">
                       M0N. - FRI. 08:00~17:00<br/>
                       SAT. - SUN. 11:00~20:00
                     </h4>

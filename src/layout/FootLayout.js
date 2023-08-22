@@ -6,7 +6,7 @@ export default function FootLayout() {
     <div className='FootLayout bg-light'>
         <Row>
             <Col> 
-              <div className="p-5">
+              <div className="p-4">
                 <div className="">
                   <Link className="fs-4 text-dark" to="/">
                     Sara's Lunch
@@ -29,8 +29,8 @@ export default function FootLayout() {
                   </li>
                 </ul>
               </div>
-              <div class="text-center my-2">
-                <p class="text-muted small m-0">© 2023 Sara's Lunch. 僅為作品練習使用。</p>
+              <div className="text-center my-2">
+                <p className="text-muted small m-0">© 2023 Sara's Lunch. 僅為作品練習使用。</p>
               </div>
                 
             </Col>

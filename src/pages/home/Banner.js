@@ -8,7 +8,7 @@ export default function Banner() {
         <div className="banner-bg-dark"></div>
         <div className="h-100 d-flex justify-content-center align-items-center">
             <div className="banner-txt text-center text-light">
-                <h1 class="fw-bold fs-1">FRESHｘSWEET</h1>
+                <h1 className="fw-bold fs-1">FRESHｘSWEET</h1>
                 <p>用心準備餐點，分享新鮮美味</p>
             </div>
         </div>

@@ -18,12 +18,11 @@ body {
 }
 
 button {
-  border: 0;
-  padding: 8px;
-  border-radius: 4px;
-  color: white;
-  background: var(--primary);
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* banner */
@@ -116,3 +115,22 @@ button {
 
 
 /* breadcrumbs */
+.breadcrumbs {
+  max-width: 1200px;
+  margin: 1rem;
+  margin-right: 2rem;
+}
+.breadcrumbs > *{
+  display: inline-block;
+  margin-right: 10px;
+}
+.breadcrumbs .crumb:after {
+  content: '>';
+  margin-left: 10px;
+}
+.breadcrumbs .crumb:last-child:after {
+  display: none;
+}
+.breadcrumbs .crumb a {
+  color: rgb(22, 21, 21);
+}
