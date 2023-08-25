@@ -1,9 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom"
 import Card from 'react-bootstrap/Card';
 
-
- 
-
 export default function Meal() {
   const meals = useLoaderData()
 

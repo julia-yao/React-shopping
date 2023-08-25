@@ -12,6 +12,8 @@ export default function FootLayout() {
                     Sara's Lunch
                   </Link>
                   <p>用心為您準備每一份餐點，快速傳遞新鮮與美味。</p>
+
+                
                 </div>
 
                 <ul className="list-unstyled d-flex">

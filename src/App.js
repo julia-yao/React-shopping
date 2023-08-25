@@ -9,16 +9,17 @@ import {
 import Home from './pages/Home'
 import Products from './pages/Products'
 import Faq from './pages/help/Faq'
-import Contact, { contactAction } from './pages/help/Contact'
+import Contact from './pages/help/Contact'
 import NotFound from './pages/NotFound'
 import Meal, { mealLoader } from './pages/products/Meal'
 import MealDetails, { mealDetailsLoader } from './pages/products/MealDetails'
 import MealError from './pages/products/MealError'
 
-
 //layout
 import RootLayout from './layout/RootLayout'
 import HelpLayout from './layout/HelpLayout'
+import ContactList from './pages/cms/ContactList'
+
 
 
 
@@ -42,9 +43,12 @@ createBrowserRouter(
 
       <Route path='help' element={<HelpLayout />}>
         <Route path='faq' element={<Faq />} />
-        <Route path='contact' element={<Contact />} />
+        <Route path='contact' element={<Contact />}/>
+        
       </Route>
-      
+
+      <Route path="cms" element={<ContactList />} />
+
       <Route path="*" element={<NotFound />} />
     </Route>
   )

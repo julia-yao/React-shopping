@@ -6,7 +6,9 @@ import Image from 'react-bootstrap/Image';
 import FootLayout from "./FootLayout";
 import Breadcrumbs from "../components/Breadcrumbs";
 
+
 function RootLayout() {
+
 return (
   <div className="RootLayout">
     <header>
@@ -28,7 +30,7 @@ return (
       <Outlet />
     </main>
     <footer>
-      <FootLayout/>
+      <FootLayout />
     </footer>
 
   

@@ -1,6 +1,5 @@
 import { Container,Row,Col } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
-
 import ProList from './products/ProList';
 
 export default function Products() {

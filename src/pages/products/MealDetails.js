@@ -4,6 +4,7 @@ import { Row, Col, Image, Button } from 'react-bootstrap'
 export default function MealDetails() {
     const {id} = useParams()
     const meal = useLoaderData()
+    
 
     return (
     <div className="MealDetails">
