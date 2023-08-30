@@ -4,6 +4,17 @@ import { Row, Col, Image, Button } from 'react-bootstrap'
 export default function MealDetails() {
     const {id} = useParams()
     const meal = useLoaderData()
+
+    const addFav =()=>{
+      console.log('fav');
+      
+
+    }
+
+    const addCart =()=>{
+      console.log('add cart');
+
+    }
     
 
     return (
@@ -16,10 +27,10 @@ export default function MealDetails() {
           <h2>{meal.name}</h2>
           <p>售價為 NT. {meal.price} 元</p>
           <div className="">
-            <Button variant="warning me-2">
+            <Button variant="warning me-2" onClick={addCart}>
               加入購物車
             </Button>
-            <Button variant="danger">
+            <Button variant="danger" onClick={addFav}>
               <i className="bi bi-suit-heart fs-6 fw-bolder"/>
             </Button>
           </div>

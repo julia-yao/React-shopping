@@ -14,11 +14,12 @@ import NotFound from './pages/NotFound'
 import Meal, { mealLoader } from './pages/products/Meal'
 import MealDetails, { mealDetailsLoader } from './pages/products/MealDetails'
 import MealError from './pages/products/MealError'
+import CartList from './pages/cms/CartList'
 
 //layout
 import RootLayout from './layout/RootLayout'
 import HelpLayout from './layout/HelpLayout'
-import ContactList from './pages/cms/ContactList'
+
 
 
 
@@ -47,7 +48,7 @@ createBrowserRouter(
         
       </Route>
 
-      <Route path="cms" element={<ContactList />} />
+      <Route path="cart" element={<CartList />} />
 
       <Route path="*" element={<NotFound />} />
     </Route>
