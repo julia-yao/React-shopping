@@ -1,6 +1,6 @@
 import { Table, Image,Container, Row } from 'react-bootstrap';
 
-const Cart = ({ cart,handleDelete }) => {
+const Cart = ({ cartdeatil,cart,handleDelete }) => {
     return ( 
         <>
         <Container>

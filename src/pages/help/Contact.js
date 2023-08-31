@@ -36,7 +36,7 @@ export default function Contact() {
 
         setIsPending('true');
 
-        fetch('http://localhost:8000/meals/', {
+        fetch('http://localhost:8000/guest', {
             method:'POST',
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify(guest)

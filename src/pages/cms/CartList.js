@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Cart from "./Cart";
 
 const CartList = () => { 
+  
     
   const [cart,setCart] = useState( [
     {
@@ -39,3 +40,4 @@ const CartList = () => {
 }
  
 export default CartList;
+
