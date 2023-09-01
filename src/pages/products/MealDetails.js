@@ -1,25 +1,31 @@
 import { useLoaderData, useParams } from "react-router-dom"
 import { Row, Col, Image, Button } from 'react-bootstrap'
+import { useState } from "react"
 
 export default function MealDetails() {
     const {id} = useParams()
     const meal = useLoaderData()
 
-    const addFav =()=>{
-      console.log('fav');
+    const handleAddCart = async (e)=>{
       
-
-    }
-
-    const addCart =()=>{
-      console.log('add cart');
-
-    }
-    
+      const carts = {
+        name: meal.name,
+        url: meal.url,
+        price: meal.price,
+        quantity:meal.quantity
+      }
+      fetch('http://localhost:8000/carts', {
+        method:'POST',
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify(carts)
+      }).then(() =>{
+          console.log("carts contact added")
+      });
+      }
 
     return (
     <div className="MealDetails">
-      <Row className="flex-md-row flex-column">
+      <Row className="flex-md-row flex-column" onClick={handleAddCart}>
         <Col xs md={7}>
           <Image src={meal.url} className='img-fluid rounded'/>
         </Col>
@@ -27,10 +33,10 @@ export default function MealDetails() {
           <h2>{meal.name}</h2>
           <p>售價為 NT. {meal.price} 元</p>
           <div className="">
-            <Button variant="warning me-2" onClick={addCart}>
+            <Button variant="warning me-2">
               加入購物車
             </Button>
-            <Button variant="danger" onClick={addFav}>
+            <Button variant="danger">
               <i className="bi bi-suit-heart fs-6 fw-bolder"/>
             </Button>
           </div>

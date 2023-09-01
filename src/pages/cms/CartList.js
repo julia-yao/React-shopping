@@ -2,39 +2,51 @@ import { useEffect, useState } from "react";
 import Cart from "./Cart";
 
 const CartList = () => { 
-  
+    const [ data, setData ] = useState(null)
+    const [ isPending, setIsPending ] = useState(false)
+    const [ error, setError ] = useState(null)
     
-  const [cart,setCart] = useState( [
-    {
-      "id": 1,
-      "name": "德國培根早午餐",
-      "price": 500,
-      "url": "https://sarabethsrestaurants.jp/_img/page/menu/07.jpg",
-      "info": "使用農場飼養雞蛋和煙燻培根，配上當日現作鬆餅和新鮮沙拉。",
-      "danger": "雞蛋/培根/小麥麵粉"
-    },
-    {
-      "id": 2,
-      "name": "鮭魚培根早午餐",
-      "price": 400,
-      "url": "https://sarabethsrestaurants.jp/_img/page/menu/09.jpg",
-      "info": "使用農場飼養雞蛋和煙燻培根，配上當日現作鬆餅和新鮮沙拉。",
-      "danger": "雞蛋/培根/小麥麵粉"
-    }
-  ])
-
+    useEffect(() => {
+      fetch('http://localhost:8000/carts')
+      .then(res => {
+        if(!res.ok){
+          throw Error('頁面無法獲取資料');
+        }
+        return res.json()
+      })
+      .then(data => {
+        setData(data);
+        setIsPending(false);
+        setError(null);
+      })
+      .catch(err =>{
+        setIsPending(false);
+        setError(err.message);
+      })
+    },[]);
+  
   const handleDelete = (id) => {
-    const newCart = cart.filter(cart => cart.id !== id);
-    setCart(newCart)
+    const newCart = data.filter(cart => cart.id !== id);
+    setData(newCart)
   }
 
-  useEffect(() => {
-    console.log('商品刪除成功')
-  },[setCart]);
-    
+  const [ quantity, setQuantity] = useState(0); 
+  const increment = () => {
+    setQuantity(quantity + 1);
+    console.log(setQuantity)
+  } 
+  const decrement = () => {
+    if ( quantity > 0 ){
+        setQuantity(quantity - 1); 
+    }
+  }
+
+
   return (
     <div className="CartList">
-      <Cart cart={cart} handleDelete={handleDelete}/>
+      { error && <div> {error} </div>}
+      { isPending && <div> Loading...</div>}
+    { data && <Cart data={data} handleDelete={handleDelete} increment={increment} decrement={decrement} />}
     </div>
   );
 }

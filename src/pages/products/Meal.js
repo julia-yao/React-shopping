@@ -7,7 +7,7 @@ export default function Meal() {
   return (
     <div className="Meal d-flex flex-wrap me-2">
       {meals.map(meals => (
-        <Link to={meals.id.toString()} key={meals.id}>
+        <Link to={meals.id.toString()} key={meals.idx}>
           <Card style={{ width: '16rem' }} className="m-2">
             <Card.Img variant="top" src={meals.url} />
             <Card.Body>

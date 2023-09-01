@@ -6,28 +6,27 @@ import { useNavigate } from 'react-router-dom';
 export default function Contact() {
 
     
-    const [name, setName] = useState("");
+    const [ name, setName ] = useState("");
     function nameChange(e){
         setName(e.target.value)
     }
 
-    const [tel, setTel] = useState("");
+    const [ tel, setTel ] = useState("");
     function telChange(e){
         setTel(e.target.value)
     }
     
-    const [mail, setMail] = useState("");
+    const [ mail, setMail ] = useState("");
     function mailChange(e){
         setMail(e.target.value)
     }
 
-    const [note, setNote] = useState("");
+    const [ note, setNote ] = useState("");
     function noteChange(e){
         setNote(e.target.value)
     }
 
-    const [isPending,setIsPending] = useState(false);
-
+    const [ isPending,setIsPending ] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = (e)=>{

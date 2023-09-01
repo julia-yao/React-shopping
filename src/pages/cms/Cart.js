@@ -1,6 +1,6 @@
-import { Table, Image,Container, Row } from 'react-bootstrap';
+import { Table, Image, Container, Row } from 'react-bootstrap';
 
-const Cart = ({ cartdeatil,cart,handleDelete }) => {
+const Cart = ({ data, handleDelete, decrement, increment}) => {
     return ( 
         <>
         <Container>
@@ -18,15 +18,19 @@ const Cart = ({ cartdeatil,cart,handleDelete }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {cart.map(cart => (
-                        <tr className="align-middle text-center" to={cart.id.toString()} key={cart.id}>
-                            <td><Image variant="top" src={cart.url} style={{ width:'12rem' }}/></td>
-                            <td>{cart.name}</td>
-                            <td>0</td>
-                            <td>{cart.price} 元</td>
-                            <td>{cart.price} 元</td>
+                        {data.map(data => (
+                        <tr className="align-middle text-center" to={data.id.toString()} key={data.id}>
+                            <td><Image variant="top" src={data.url} style={{ width:'12rem' }}/></td>
+                            <td>{data.name}</td>
                             <td>
-                                <button onClick={()=>handleDelete(cart.id)} className="btn mx-auto">
+                                <button onClick={()=>decrement()}>-</button>
+                                 {data.quantity} 
+                                <button onClick={()=>increment()}>+</button>
+                            </td>
+                            <td>{data.price} 元</td>
+                            <td>{data.price} 元</td>
+                            <td>
+                                <button onClick={()=>handleDelete(data.id)} className="btn mx-auto">
                                 <i className="bi bi-trash3-fill fs-4"></i> 
                                 </button>
                             </td>
