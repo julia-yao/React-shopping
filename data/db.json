@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "name": "德國培根早午餐",
+      "name": "德國培根早午餐2",
       "price": 500,
       "url": "https://sarabethsrestaurants.jp/_img/page/menu/09.jpg",
       "info": "使用農場飼養雞蛋做成歐姆蛋和煙燻培根，配上當日現作鬆餅和新鮮沙拉。",
@@ -105,35 +105,16 @@
   ],
   "carts": [
     {
-      "id": 31,
-      "name": "堅果藜麥沙拉",
-      "price": 400,
-      "url": "https://sarabethsrestaurants.jp/_img/page/menu/24.jpg",
+      "id": 3,
       "quantity": 1
     },
     {
-      "name": "德國培根早午餐",
-      "url": "https://sarabethsrestaurants.jp/_img/page/menu/09.jpg",
-      "price": 500,
-      "id": 32
+      "id": 1,
+      "quantity": 1
     },
     {
-      "name": "植物肉丸沙拉",
-      "url": "https://sarabethsrestaurants.jp/_img/page/menu/22.jpg",
-      "price": 380,
-      "id": 33
-    },
-    {
-      "name": "植物肉丸沙拉",
-      "url": "https://sarabethsrestaurants.jp/_img/page/menu/22.jpg",
-      "price": 380,
-      "id": 34
-    },
-    {
-      "name": "植物肉丸沙拉",
-      "url": "https://sarabethsrestaurants.jp/_img/page/menu/22.jpg",
-      "price": 380,
-      "id": 35
+      "id": 2,
+      "quantity": 6
     }
   ]
 }
