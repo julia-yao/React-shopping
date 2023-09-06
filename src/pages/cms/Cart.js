@@ -1,6 +1,9 @@
-import { Table, Image, Container, Row } from 'react-bootstrap';
+import { Table, Container, Row } from 'react-bootstrap';
+import CartItem from './CartItem';
 
 const Cart = ({ data, handleDelete, decrement, increment}) => {
+
+    
     return ( 
         <>
         <Container>
@@ -18,24 +21,9 @@ const Cart = ({ data, handleDelete, decrement, increment}) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map(data => (
-                        <tr className="align-middle text-center" to={data.id.toString()} key={data.id}>
-                            <td><Image variant="top" src={data.url} style={{ width:'12rem' }}/></td>
-                            <td>{data.name}</td>
-                            <td>
-                                <button onClick={()=>decrement()}>-</button>
-                                 {data.quantity} 
-                                <button onClick={()=>increment()}>+</button>
-                            </td>
-                            <td>{data.price} 元</td>
-                            <td>{data.price} 元</td>
-                            <td>
-                                <button onClick={()=>handleDelete(data.id)} className="btn mx-auto">
-                                <i className="bi bi-trash3-fill fs-4"></i> 
-                                </button>
-                            </td>
-                        </tr>
-                        ))} 
+                        {data.map(x => (
+                            <CartItem data={x} handleDelete={handleDelete} increment={increment} decrement={decrement} key={x.id}/>
+                        ))}
                     </tbody>
                 </Table>
             </Row>    

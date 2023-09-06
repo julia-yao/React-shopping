@@ -5,23 +5,35 @@ import { useState } from "react"
 export default function MealDetails() {
     const {id} = useParams()
     const meal = useLoaderData()
-
+    
     const handleAddCart = async (e)=>{
+      let res=null;
+      let metd = 'POST';
+      let url = 'http://localhost:8000/carts/';
+      let pUrl = url+meal.id;
+      let json = {id:meal.id,quantity:1}
+      //check if the meal is in cart
+      await fetch(pUrl)
+            .then(x=>{
+              if(!x.ok)return;
+              return x.json();
+            }).then(x=>res=x)
       
-      const carts = {
-        name: meal.name,
-        url: meal.url,
-        price: meal.price,
-        quantity:meal.quantity
+      if(res!=null){
+        console.log("already in cart");
+        json.quantity = res.quantity+1;
+        metd = 'PATCH';
+        url = pUrl;
       }
-      fetch('http://localhost:8000/carts', {
-        method:'POST',
+
+      fetch(url, {
+        method:metd,
         headers:{"Content-Type":"application/json"},
-        body: JSON.stringify(carts)
+        body: JSON.stringify(json)
       }).then(() =>{
-          console.log("carts contact added")
+        console.log("carts contact added")
       });
-      }
+    }
 
     return (
     <div className="MealDetails">
@@ -39,17 +51,15 @@ export default function MealDetails() {
             <Button variant="danger">
               <i className="bi bi-suit-heart fs-6 fw-bolder"/>
             </Button>
-          </div>
-            
+          </div>  
           <div className="details mt-3 border-top py-2">
             <p>餐點介紹：{meal.info}</p>
             <p>本餐點內含：{meal.danger}，有過敏體質者請注意。</p>
           </div>
         </Col>
       </Row>
-      
     </div>
-  )
+    )
 }
 
 export const mealDetailsLoader = async ({ params }) => {
