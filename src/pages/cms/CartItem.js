@@ -1,8 +1,8 @@
 import { Image } from 'react-bootstrap';
-import {API_MEAL_GET_DATA} from '../../constants';
+import {API_MEAL_GET_DATA,API_CARTS_GET_DATA} from '../../constants';
 import { useEffect, useState } from "react";
 
-const CartItem = ({ data, handleDelete, decrement, increment}) => {
+const CartItem = ({ data, handleDelete}) => {
     const [ meal, setMeal ] = useState(null)
     const [ quantity, setQuantity] = useState(data.quantity)
     
@@ -21,9 +21,9 @@ const CartItem = ({ data, handleDelete, decrement, increment}) => {
             body: JSON.stringify({quantity:num})
         };
         console.log(num);
-        fetch('http://localhost:8000/carts/' + data.id, option)
+        fetch(API_CARTS_GET_DATA + data.id, option)
         .then(()=>{
-            fetch('http://localhost:8000/carts/' + data.id)
+            fetch(API_CARTS_GET_DATA + data.id)
             .then(x => x.json())
             .then(x => setQuantity(x.quantity))
         });

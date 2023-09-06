@@ -22,7 +22,7 @@ const Cart = ({ data, handleDelete, decrement, increment}) => {
                     </thead>
                     <tbody>
                         {data.map(x => (
-                            <CartItem data={x} handleDelete={handleDelete} increment={increment} decrement={decrement} key={x.id}/>
+                            <CartItem data={x} handleDelete={handleDelete} key={x.id}/>
                         ))}
                     </tbody>
                 </Table>
