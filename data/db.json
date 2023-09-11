@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "name": "德國培根早午餐2",
+      "name": "德國培根早午餐",
       "price": 500,
       "url": "https://sarabethsrestaurants.jp/_img/page/menu/09.jpg",
       "info": "使用農場飼養雞蛋做成歐姆蛋和煙燻培根，配上當日現作鬆餅和新鮮沙拉。",
@@ -101,20 +101,23 @@
       "mail": "jl@gmail.com",
       "note": "000999999",
       "id": 13
+    },
+    {
+      "name": "amrib",
+      "tel": "orjo3joj3o",
+      "mail": "test@gmail.com",
+      "note": "vllr",
+      "id": 14
     }
   ],
   "carts": [
     {
-      "id": 3,
-      "quantity": 1
-    },
-    {
       "id": 1,
-      "quantity": 1
+      "quantity": 2
     },
     {
       "id": 2,
-      "quantity": 6
+      "quantity": 1
     }
   ]
 }
