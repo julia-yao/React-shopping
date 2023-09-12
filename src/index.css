@@ -115,3 +115,12 @@ a {
 .breadcrumbs .crumb a {
   color: rgb(22, 21, 21);
 }
+.mealCard{
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.mealCard:hover .mealImg{
+  transform: scale(0.8);
+  transition: 0.8s;
+}

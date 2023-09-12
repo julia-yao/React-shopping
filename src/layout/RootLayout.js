@@ -18,6 +18,7 @@ return (
             <Link className="Nav.Link mx-2" to="/">Home</Link>
             <Link className="Nav.Link mx-2" to="products">Products</Link>
             <Link className="Nav.Link mx-2" to="help">Help</Link>
+            <Link className="Nav.Link mx-2" to="cart">Cart</Link>
           </Nav>
         </Container>
       </Navbar>

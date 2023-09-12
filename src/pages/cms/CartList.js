@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import Cart from "./Cart";
+import swal from 'sweetalert';
 
 const CartList = () => { 
   const [ data, setData ] = useState(null)
   const [ isPending, setIsPending ] = useState(false)
   const [ error, setError ] = useState(null)
-  const [ quantity, setQuantity] = useState(0); 
-  console.log("cartlist")
+  
   useEffect(() => {
     fetch('http://localhost:8000/carts')
     .then(res => {
@@ -26,34 +26,41 @@ const CartList = () => {
   },[]);
   
   const handleDelete = (id) => {
-    fetch('http://localhost:8000/carts/'+id, {
-      method:'DELETE'
+    swal({
+      title: "確定刪除嗎？",
+      text: "此商品將從購物車消失",
+      icon: "warning",
+      buttons:  ["取消", "確定"],
+      dangerMode: true,
     })
-    .then(() =>{
-      fetch('http://localhost:8000/carts/')
-      .then(x=>x.json())
-      .then(x=>setData(x))
+    .then((willDelete) => {
+      if (willDelete) {
+        fetch('http://localhost:8000/carts/' + id, {
+          method:'DELETE'
+        })
+        .then(() =>{
+          fetch('http://localhost:8000/carts/')
+          .then(x=>x.json())
+          .then(x=>setData(x))
+        }).then(() =>{
+          swal("成功!", "購物車商品已移除", "success");
+        });
+            
+      } else {
+        swal("保留喜愛商品！");
+      }
     });
     //const newCart = data.filter(cart => cart.id !== id);
-  }
-
-  const increment = () => {
-    setQuantity(quantity + 1);
-  }
-
-  const decrement = () => {
-    if ( quantity > 0 )
-      setQuantity(quantity - 1);
   }
 
   return (
     <div className="CartList">
       { error && <div> {error} </div>}
       { isPending && <div> Loading...</div>}
-      { data && <Cart data={data} handleDelete={handleDelete} increment={increment} decrement={decrement} />}
+      { data && <Cart data={data} handleDelete={handleDelete} />}
+      
     </div>
   );
 }
  
 export default CartList;
-

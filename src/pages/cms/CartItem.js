@@ -1,13 +1,15 @@
-import { Image } from 'react-bootstrap';
+import { Image, Button } from 'react-bootstrap';
 import {API_MEAL_GET_DATA} from '../../constants';
+import {API_CARTS_GET_DATA} from '../../constants';
 import { useEffect, useState } from "react";
 
-const CartItem = ({ data, handleDelete, decrement, increment}) => {
+
+const CartItem = ({ data, handleDelete}) => {
     const [ meal, setMeal ] = useState(null)
-    const [ quantity, setQuantity] = useState(data.quantity)
+    const [ quantity, setQuantity ] = useState(data.quantity)
     
     useEffect(() => {
-        fetch(API_MEAL_GET_DATA + data.id)
+        fetch( API_MEAL_GET_DATA + data.id)
         .then(x => x.json())
         .then(x => setMeal(x))
     },[]);
@@ -21,24 +23,24 @@ const CartItem = ({ data, handleDelete, decrement, increment}) => {
             body: JSON.stringify({quantity:num})
         };
         console.log(num);
-        fetch('http://localhost:8000/carts/' + data.id, option)
+        fetch( API_CARTS_GET_DATA + data.id, option)
         .then(()=>{
-            fetch('http://localhost:8000/carts/' + data.id)
+            fetch( API_CARTS_GET_DATA + data.id)
             .then(x => x.json())
             .then(x => setQuantity(x.quantity))
         });
     }
     
-    if(meal==null)
+    if( meal== null)
         return (<tr></tr>);
     return ( 
         <tr className="align-middle text-center" to={meal.id.toString()} key={meal.id}>
             <td><Image variant="top" src={meal.url} style={{ width:'12rem' }}/></td>
             <td>{meal.name}</td>
             <td>
-                <button onClick={()=>UpdateQuantity(quantity-1)}>-</button>
+                <Button className='mx-2' onClick={()=>UpdateQuantity(quantity-1)}>-</Button>
                     {quantity} {/*1*/}
-                <button onClick={()=>UpdateQuantity(quantity+1)}>+</button>
+                <Button className='mx-2' onClick={()=>UpdateQuantity(quantity+1)}>+</Button>
             </td>
             <td>{meal.price} 元</td>
             <td>{meal.price*quantity} 元</td>

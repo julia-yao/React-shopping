@@ -20,9 +20,10 @@ import CartList from './pages/cms/CartList'
 import RootLayout from './layout/RootLayout'
 import HelpLayout from './layout/HelpLayout'
 
-/*
-npx json-server --watch data/db.json --port 8000
-*/
+
+
+
+
 
 const router = 
 createBrowserRouter(

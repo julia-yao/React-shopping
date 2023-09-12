@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom"
 import { Row, Col, Image, Button } from 'react-bootstrap'
-import { useState } from "react"
+import swal from 'sweetalert';
+
 
 export default function MealDetails() {
     const {id} = useParams()
@@ -11,7 +12,7 @@ export default function MealDetails() {
       let metd = 'POST';
       let url = 'http://localhost:8000/carts/';
       let pUrl = url+meal.id;
-      let json = {id:meal.id,quantity:1}
+      let json = {id:meal.id, quantity:1}
       //check if the meal is in cart
       await fetch(pUrl)
             .then(x=>{
@@ -21,7 +22,7 @@ export default function MealDetails() {
       
       if(res!=null){
         console.log("already in cart");
-        json.quantity = res.quantity+1;
+        json.quantity = res.quantity +1;
         metd = 'PATCH';
         url = pUrl;
       }
@@ -31,15 +32,16 @@ export default function MealDetails() {
         headers:{"Content-Type":"application/json"},
         body: JSON.stringify(json)
       }).then(() =>{
-        console.log("carts contact added")
+        console.log("carts added")
+        swal("成功!", "商品已加入購物車", "success");
       });
     }
 
     return (
     <div className="MealDetails">
       <Row className="flex-md-row flex-column" onClick={handleAddCart}>
-        <Col xs md={7}>
-          <Image src={meal.url} className='img-fluid rounded'/>
+        <Col xs md={7} className="mt-3 mt-md-0">
+          <Image src={meal.url} className='img-fluid rounded shadow-sm'/>
         </Col>
         <Col xs md={5} className="px-2">
           <h2>{meal.name}</h2>
