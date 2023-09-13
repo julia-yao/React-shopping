@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import Cart from "./Cart";
+import CartTotal from "./CartTotal";
 import swal from 'sweetalert';
+
+
 
 const CartList = () => { 
   const [ data, setData ] = useState(null)
@@ -50,7 +53,6 @@ const CartList = () => {
         swal("保留喜愛商品！");
       }
     });
-    //const newCart = data.filter(cart => cart.id !== id);
   }
 
   return (
@@ -58,6 +60,7 @@ const CartList = () => {
       { error && <div> {error} </div>}
       { isPending && <div> Loading...</div>}
       { data && <Cart data={data} handleDelete={handleDelete} />}
+      { data && <CartTotal data={data} key={data.id}/>}
       
     </div>
   );
