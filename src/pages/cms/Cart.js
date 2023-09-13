@@ -1,7 +1,7 @@
 import { Table, Container, Row } from 'react-bootstrap';
 import CartItem from './CartItem';
 
-const Cart = ({ data, handleDelete}) => {
+const Cart = ({ data, handleDelete,setSub}) => {
     
     return ( 
         <>
@@ -21,7 +21,7 @@ const Cart = ({ data, handleDelete}) => {
                     </thead>
                     <tbody>
                         {data.map(x => (
-                            <CartItem data={x} handleDelete={handleDelete}  key={x.id}/>
+                            <CartItem data={x} handleDelete={handleDelete} key={x.id} setSub={setSub}/>
                         ))}
                     </tbody>
                 </Table>

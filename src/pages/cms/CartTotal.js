@@ -2,8 +2,10 @@ import { Col, Row, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function CartTotal({data}) {
-    const priceTotal = data.id;
-    console.log(priceTotal)
+  let total = 0;
+  for(let i=0;i<data.length;i++)
+    total+=data[i].st;
+
   return (
     <div className="container">
         <Row className="my-2 align-items-center justify-content-between ps-2">
@@ -20,7 +22,7 @@ export default function CartTotal({data}) {
           </Col>
           <Col xs md={4}>
               <div className="text-success fs-3">
-                總金額 NT. <strong className="">{}</strong>元
+                總金額 NT. <strong className="">{total}</strong>元
               </div>
           </Col>
           <hr></hr>

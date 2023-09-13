@@ -4,14 +4,14 @@ import {API_CARTS_GET_DATA} from '../../constants';
 import { useEffect, useState } from "react";
 
 
-const CartItem = ({ data, handleDelete}) => {
+const CartItem = ({ data, handleDelete,setSub}) => {
     const [ meal, setMeal ] = useState(null)
     const [ quantity, setQuantity ] = useState(data.quantity)
     
     useEffect(() => {
         fetch( API_MEAL_GET_DATA + data.id)
         .then(x => x.json())
-        .then(x => setMeal(x))
+        .then(x => {setMeal(x); setSub(data.id,x.price*quantity);})
     },[]);
 
     const UpdateQuantity = (num) => {
@@ -22,17 +22,18 @@ const CartItem = ({ data, handleDelete}) => {
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify({quantity:num})
         };
-        console.log(num);
+        
         fetch( API_CARTS_GET_DATA + data.id, option)
         .then(()=>{
             fetch( API_CARTS_GET_DATA + data.id)
             .then(x => x.json())
-            .then(x => setQuantity(x.quantity))
+            .then(x => {setQuantity(x.quantity); setSub(data.id,meal.price*x.quantity);})
         });
     }
     
-    if( meal== null)
-        return (<tr></tr>);
+    if( meal == null || Object.keys(meal).length === 0)
+      return (<tr><td>ERROR</td></tr>);
+    
     return ( 
         <tr className="align-middle text-center" to={meal.id.toString()} key={meal.id}>
             <td><Image variant="top" src={meal.url} style={{ width:'12rem' }}/></td>

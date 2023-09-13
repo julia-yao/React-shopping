@@ -18,8 +18,9 @@ export default function MealDetails() {
             .then(x=>{
               if(!x.ok)return;
               return x.json();
-            }).then(x=>res=x)
-      
+            })
+            .then(x=>res=x) 
+            
       if(res!=null){
         console.log("already in cart");
         json.quantity = res.quantity +1;
