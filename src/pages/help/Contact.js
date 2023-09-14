@@ -44,7 +44,9 @@ export default function Contact() {
             setIsPending(false)
             
         });
-        navigate('/');
+        setTimeout(() => {
+            navigate('/');
+          }, "2000");
     }   
     
 

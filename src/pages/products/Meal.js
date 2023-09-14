@@ -8,8 +8,13 @@ export default function Meal() {
     <div className="Meal d-flex flex-wrap me-2">
       {meals.map(meal => (
         <Link key={meal.id} to={meal.id.toString()}>
+<<<<<<< Updated upstream
           <Card style={{ width: '16rem' }} className="m-2">
             <Card.Img variant="top" src={meal.url} />
+=======
+          <Card style={{ width: '16rem' }} className="mealCard m-2">
+            <Card.Img variant="top" src={meal.url} className="MealImg"/>
+>>>>>>> Stashed changes
             <Card.Body>
               <Card.Title>{meal.name}</Card.Title>
               <Card.Text>

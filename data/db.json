@@ -2,6 +2,7 @@
   "meals": [
     {
       "id": 1,
+      "category": "bs",
       "name": "德國培根早午餐",
       "price": 500,
       "url": "https://sarabethsrestaurants.jp/_img/page/menu/07.jpg",
@@ -10,11 +11,12 @@
     },
     {
       "id": 2,
-      "name": "德國培根早午餐",
+      "category": "bs",
+      "name": "煙燻鮭魚早午餐",
       "price": 500,
       "url": "https://sarabethsrestaurants.jp/_img/page/menu/09.jpg",
       "info": "使用農場飼養雞蛋做成歐姆蛋和煙燻培根，配上當日現作鬆餅和新鮮沙拉。",
-      "danger": "雞蛋/培根"
+      "danger": "雞蛋/魚"
     },
     {
       "id": 3,
@@ -45,7 +47,7 @@
       "name": "植物肉丸沙拉",
       "price": 380,
       "url": "https://sarabethsrestaurants.jp/_img/page/menu/22.jpg",
-      "info": "農場香菇做成的素肉排用番茄醬烹煮，配上新鮮沙拉。",
+      "info": "精選香菇的素肉排以番茄醬烹煮，配上新鮮沙拉。",
       "danger": "黃豆/小麥麵粉"
     },
     {
@@ -61,16 +63,98 @@
       "name": "堅果藜麥沙拉",
       "price": 400,
       "url": "https://sarabethsrestaurants.jp/_img/page/menu/24.jpg",
-      "info": "使用新鮮五種堅果，配上新鮮沙拉萵苣。",
+      "info": "使用新鮮水果和堅果，配上新鮮沙拉萵苣。",
       "danger": "堅果"
     },
     {
       "id": 9,
-      "name": "手打牛肉漢堡",
-      "price": 500,
-      "url": "https://sarabethsrestaurants.jp/_img/page/menu/10.jpg",
-      "info": "使用紐西蘭牛肉和煙燻培根醬汁，配上歐式麵包。",
-      "danger": "牛肉/香腸/小麥麵粉"
+      "name": "蜂蜜鮮奶油法式吐司",
+      "category": "ft",
+      "price": 360,
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/03.jpg",
+      "info": "使用紐西蘭牛奶和農場雞蛋，配上布里歐吐司及龍眼蜂蜜。",
+      "danger": "牛奶/雞蛋/小麥麵粉"
+    },
+    {
+      "id": 10,
+      "name": "草莓香蕉奶昔",
+      "category": "ft",
+      "price": 200,
+      "url": "https://sarabethsrestaurants.jp/_img/page/menu/01.jpg",
+      "info": "使用紐西蘭牛奶和農場雞蛋，配上布里歐吐司及季節草莓。",
+      "danger": "牛奶/雞蛋/小麥麵粉"
+    },
+    {
+      "id": 11,
+      "name": "布朗尼千層蛋糕",
+      "price": 200,
+      "url": "https://www.doutor.co.jp/product/file/20230308123800.jpg",
+      "info": "使用紐西蘭鮮奶油和農場雞蛋，配上黑巧克力及苦甜風味粉。",
+      "danger": "牛奶/雞蛋/小麥麵粉"
+    },
+    {
+      "id": 12,
+      "name": "海鹽起司蛋糕",
+      "price": 200,
+      "url": "https://www.doutor.co.jp/product/file/20221116133048.jpg",
+      "info": "使用紐西蘭鮮奶和農場雞蛋，配上起司及高知海鹽粉。",
+      "danger": "牛奶/雞蛋/小麥麵粉"
+    },
+    {
+      "id": 13,
+      "name": "蜂蜜歐雷",
+      "price": 200,
+      "url": "https://www.doutor.co.jp/product/file/20230329113848.jpg",
+      "info": "使用紐西蘭牛奶和日式黑咖啡，配上龍眼蜂蜜。",
+      "danger": "牛奶"
+    },
+    {
+      "id": 14,
+      "name": "美式咖啡",
+      "price": 150,
+      "url": "https://www.doutor.co.jp/product/file/20120509141245.jpg",
+      "info": "使用季節特選咖啡豆，享受無糖的原味。",
+      "danger": ""
+    },
+    {
+      "id": 15,
+      "name": "美式拿鐵",
+      "price": 200,
+      "url": "https://www.doutor.co.jp/product/file/20111201202302.jpg",
+      "info": "使用紐西蘭牛奶和美式咖啡，享受極致奶香。",
+      "danger": "牛奶"
+    },
+    {
+      "id": 16,
+      "name": "重烘焙義式咖啡",
+      "price": 250,
+      "url": "https://www.doutor.co.jp/product/file/20111201201102.jpg",
+      "info": "使用特選咖啡豆，享受酸苦然後回甘的香味。",
+      "danger": ""
+    },
+    {
+      "id": 17,
+      "name": "檸檬海鹽蘇打",
+      "price": 200,
+      "url": "https://www.doutor.co.jp/product/file/20200618185939.jpg",
+      "info": "使用夏日檸檬和蜂蜜，配上海鹽的層次味覺。",
+      "danger": ""
+    },
+    {
+      "id": 18,
+      "name": "錫蘭紅茶",
+      "price": 150,
+      "url": "https://www.doutor.co.jp/product/file/20111201203140.jpg",
+      "info": "選用超熟炒製錫蘭紅茶葉，兩次沖泡飲出茶香。",
+      "danger": ""
+    },
+    {
+      "id": 19,
+      "name": "鮮榨柳橙汁",
+      "price": 150,
+      "url": "https://www.doutor.co.jp/product/file/20210706182407.jpg",
+      "info": "使用飽滿果肉的柳橙榨汁，享受水果自然的香甜味。",
+      "danger": ""
     }
   ],
   "guest": [
@@ -79,19 +163,13 @@
       "tel": "000",
       "mail": "jl@gmail.com",
       "note": "9999",
-      "id": 10
-    },
-    {
-      "name": "00000",
-      "tel": "000",
-      "mail": "fjoewj@gmail.com",
-      "note": "kpppp",
-      "id": 11
+      "id": 41
     },
     {
       "name": "00000",
       "tel": "23-456878",
       "mail": "test@gmail.com",
+<<<<<<< Updated upstream
       "note": "ololol",
       "id": 12
     },
@@ -101,11 +179,41 @@
       "mail": "jl@gmail.com",
       "note": "000999999",
       "id": 13
+=======
+      "note": "With our sponsor Mockend and a simple GitHub repo, you can have your own fake online REST server in seconds.",
+      "id": 42
+    },
+    {
+      "name": "amrib",
+      "tel": "23-456878",
+      "mail": "jl@gmail.com",
+      "note": "f setTimeout() is called with delay value that's not a number, implicit type coercion is silently done on the value to convert it to a number. For example, the following code incorrectly uses the string \"1000\" for the delay value, rather than the number 1000 – but it nevertheless works, because when the code runs, the string is coerced into the number 1000, and so the code executes 1 second later.",
+      "id": 43
+    },
+    {
+      "name": "00000",
+      "tel": "23-456878",
+      "mail": "fjoewj@gmail.com",
+      "note": "f setTimeout() is called with delay value that's not a number, implicit type coercion is silently done on the value to convert it to a number. For example, the following code incorrectly uses the string \"1000\" for the delay value, rather than the number 1000 – but it nevertheless works, because when the code runs, the string is coerced into the number 1000, and so the code executes 1 second later.",
+      "id": 44
+>>>>>>> Stashed changes
     }
   ],
   "carts": [
     {
+<<<<<<< Updated upstream
       "id": 1,
+=======
+      "id": 2,
+      "quantity": 5
+    },
+    {
+      "id": 17,
+      "quantity": 4
+    },
+    {
+      "id": 11,
+>>>>>>> Stashed changes
       "quantity": 1
     }
   ]

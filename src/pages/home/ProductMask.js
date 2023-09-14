@@ -1,14 +1,24 @@
+<<<<<<< Updated upstream
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 
+=======
+import { Row, Col, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+>>>>>>> Stashed changes
 
 export default function ProductMask() {
   return (
     <div className='my-5'>
         <Row  className='ProductMask g-0'>
+<<<<<<< Updated upstream
             <Col xs={12} md={6} lg={3} className='g-0 maskcard'>
                 <a href="meals.html#list-item-bs">
+=======
+            <Col xs={12} md={6} lg={3} className='g-0 maskcard '>
+                <Link to="/products">
+>>>>>>> Stashed changes
                     <Image src="https://sarabethsrestaurants.jp/_img/page/menu/10.jpg" alt="經典早午餐"/>
                     <div className="mask"></div>
                     <div className="txt">
@@ -19,8 +29,13 @@ export default function ProductMask() {
                     </div>
                 </a>
             </Col>
+<<<<<<< Updated upstream
             <Col xs={12} md={6} lg={3} className='g-0 maskcard'>
                 <a href="meals.html#list-item-fc">
+=======
+            <Col xs={12} md={6} lg={3} className='g-0 maskcard '>
+                <Link to="/products">
+>>>>>>> Stashed changes
                     <Image src="https://sarabethsrestaurants.jp/_img/page/menu/02.jpg" alt="草莓鮮奶油法式吐司"/>
                     <div className="mask"></div>
                     <div className="txt">
@@ -31,8 +46,13 @@ export default function ProductMask() {
                     </div>
                 </a>
             </Col>
+<<<<<<< Updated upstream
             <Col xs={12} md={6} lg={3} className='g-0 maskcard'>
                 <a href="meals.html#list-item-ct">
+=======
+            <Col xs={12} md={6} lg={3} className='g-0 maskcard '>
+                <Link to="/products">
+>>>>>>> Stashed changes
                     <Image src="https://www.doutor.co.jp/product/file/20230329113848.jpg" alt="蜂蜜歐雷"/>
                     <div className="mask"></div>
                     <div className="txt">
@@ -43,8 +63,13 @@ export default function ProductMask() {
                     </div>
                 </a>
             </Col>
+<<<<<<< Updated upstream
             <Col xs={12} md={6} lg={3} className='g-0 maskcard'>
                 <a href="meals.html#list-item-js">
+=======
+            <Col xs={12} md={6} lg={3} className='g-0 maskcard '>
+                <Link to="/products">
+>>>>>>> Stashed changes
                     <Image src="https://www.doutor.co.jp/product/file/20200618185939.jpg" alt="氣泡水"/>
                     <div className="mask"></div>
                     <div className="txt">

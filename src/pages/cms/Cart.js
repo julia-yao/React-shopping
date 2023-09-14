@@ -1,8 +1,12 @@
 import { Table, Container, Row } from 'react-bootstrap';
 import CartItem from './CartItem';
 
+<<<<<<< Updated upstream
 const Cart = ({ data, handleDelete, decrement, increment}) => {
 
+=======
+const Cart = ({ data, handleDelete,setSub}) => {
+>>>>>>> Stashed changes
     
     return ( 
         <>
@@ -22,7 +26,11 @@ const Cart = ({ data, handleDelete, decrement, increment}) => {
                     </thead>
                     <tbody>
                         {data.map(x => (
+<<<<<<< Updated upstream
                             <CartItem data={x} handleDelete={handleDelete} key={x.id}/>
+=======
+                            <CartItem data={x} handleDelete={handleDelete} key={x.id} setSub={setSub}/>
+>>>>>>> Stashed changes
                         ))}
                     </tbody>
                 </Table>
