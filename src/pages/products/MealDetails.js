@@ -4,47 +4,50 @@ import swal from 'sweetalert';
 
 
 export default function MealDetails() {
-    const {id} = useParams()
-    const meal = useLoaderData()
-    
-    const handleAddCart = async (e)=>{
-      let res=null;
-      let metd = 'POST';
-      let url = 'http://localhost:8000/carts/';
-      let pUrl = url+meal.id;
-      let json = {id:meal.id, quantity:1}
-      //check if the meal is in cart
-      await fetch(pUrl)
-            .then(x=>{
-              if(!x.ok)return;
-              return x.json();
-            })
-            .then(x=>res=x) 
-            
-      if(res!=null){
-        console.log("already in cart");
-        json.quantity = res.quantity +1;
-        metd = 'PATCH';
-        url = pUrl;
-      }
-
-      fetch(url, {
-        method:metd,
-        headers:{"Content-Type":"application/json"},
-        body: JSON.stringify(json)
-      }).then(() =>{
-        console.log("carts added")
-        swal("成功!", "商品已加入購物車", "success");
-      });
+  const {id} = useParams()
+  const meal = useLoaderData()
+  
+  const handleAddCart = async (e)=>{
+    let res=null;
+    let metd = 'POST';
+    let url = 'http://localhost:8000/carts/';
+    let pUrl = url+meal.id;
+    let json = {id:meal.id, quantity:1}
+    //check if the meal is in cart
+    await fetch(pUrl)
+          .then(x=>{
+            if(!x.ok)return;
+            return x.json();
+          })
+          .then(x=>res=x) 
+          
+    if(res!=null){
+      console.log("already in cart");
+      json.quantity = res.quantity +1;
+      metd = 'PATCH';
+      url = pUrl;
     }
+
+
+    fetch(url, {
+      method:metd,
+      headers:{"Content-Type":"application/json"},
+      body: JSON.stringify(json)
+    }).then(() =>{
+      console.log("carts added")
+      swal("成功!", "商品已加入購物車", "success");
+    });
+  }
 
     return (
     <div className="MealDetails">
-      <Row className="flex-md-row flex-column" onClick={handleAddCart}>
-        <Col xs md={7} className="mt-3 mt-md-0">
-          <Image src={meal.url} className='img-fluid rounded shadow-sm'/>
+      <Row className="flex-md-row flex-column justify-content-center" onClick={handleAddCart}>
+        <Col xs md={5} className="m-3 m-md-0 d-flex justify-content-center">
+          <div className="" style={{ hidth:'270px'}}>
+            <Image src={meal.url} className='img-fluid rounded shadow-sm mealDetailImg'/>
+          </div>
         </Col>
-        <Col xs md={5} className="px-2">
+        <Col xs md={6} className="px-2">
           <h2>{meal.name}</h2>
           <p>售價為 NT. {meal.price} 元</p>
           <div className="">

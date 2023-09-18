@@ -33,10 +33,9 @@ const CartItem = ({ data, handleDelete,setSub}) => {
     
     if( meal == null || Object.keys(meal).length === 0)
       return (<tr><td>ERROR</td></tr>);
-    
     return ( 
         <tr className="align-middle text-center" to={meal.id.toString()} key={meal.id}>
-            <td><Image variant="top" src={meal.url} style={{ width:'12rem' }}/></td>
+            <td><Image variant="top" src={meal.url} style={{ width:'12rem',objectFit:"cover" }}/></td>
             <td>{meal.name}</td>
             <td>
                 <Button className='mx-2' onClick={()=>UpdateQuantity(quantity-1)}>-</Button>

@@ -18,9 +18,26 @@ button {
   cursor: pointer;
 }
 
-a {
-  text-decoration: none;
+a,link {
+  text-decoration: none !important;
 }
+/* header */
+.navFixed {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background:red;
+}
+.navFixed2 {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(23, 152, 152, 0.67)!important;
+  transition:  ease 0.3s;
+}
+
 
 /* banner */
 .banner {
@@ -36,7 +53,7 @@ a {
   height: 100%;
   object-fit: cover;
 }
-.banner-bg-dark {
+.bannerBgDark {
   position: absolute;
   top: 0;
   right: 0;
@@ -44,27 +61,28 @@ a {
   left: 0;
   background: rgba(0, 0, 0, 0.5);
 }
-.banner-txt {
+.bannerTxt {
   position: absolute;
   font-family: "BernhardScriptW01-Light";
   font-style: normal;
 }
-/* ProductMask */
-.ProductMask{
+
+/* productMask */
+.productMask{
   width: 100%;
   display: flex;
 }
-.maskcard{
+.maskCard{
   overflow: hidden;
   position: relative;
 }
-.maskcard img{
+.maskCard img{
   vertical-align: middle;
   width: 100%;
-  height: 260px;
+  height: 300px;
   object-fit: cover;
 }
-.maskcard .mask{
+.maskCard .mask{
   position: absolute;
   top: 0;
   right: 0;
@@ -74,10 +92,11 @@ a {
   opacity: 1;
   transition: opacity 0.6s;
 }
-.maskcard:hover .mask{
+.maskCard:hover .mask{
   opacity: 0;
 }
-.maskcard .txt{
+
+.maskCard .txt{
   position: absolute;
   top: 0;
   right: 0;
@@ -89,33 +108,37 @@ a {
   justify-content: center;
   flex-direction: column;
 }
-.font-family{ 
+.maskCard .font-family{ 
   color: #fff;
   display: block;
   text-shadow: 1px 1px 1px rgb(83, 81, 81);
   font-family: 'Oswald', sans-serif;
 }
 
-.breadcrumbs {
+/* breadCrumbs */
+.breadCrumbs {
   max-width: 1200px;
   margin: 1rem;
   margin-right: 2rem;
 }
-.breadcrumbs > *{
+.breadCrumbs > *{
   display: inline-block;
   margin-right: 12px;
 }
-.breadcrumbs .crumb:after {
+.breadCrumbs .crumb:after {
   content: '>';
   margin-left: 10px;
 }
-.breadcrumbs .crumb:last-child:after {
+.breadCrumbs .crumb:last-child:after {
   display: none;
 }
-.breadcrumbs .crumb a {
+.breadCrumbs .crumb a {
   color: rgb(22, 21, 21);
 }
-.mealCard{
+
+/* meal */
+.mealImg{
+  height: 230px;
   overflow: hidden;
   object-fit: cover;
 }
@@ -124,3 +147,11 @@ a {
   transform: scale(0.8);
   transition: 0.8s;
 }
+
+/* mealDetails */
+.mealDetailImg{
+  max-height: 270px;
+  max-width: 396px;
+  object-fit: scale-down;
+}
+

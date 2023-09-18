@@ -44,7 +44,9 @@ export default function Contact() {
             setIsPending(false)
             swal("留言成功!", "您的留言已送出，客服將快速為您服務！", "success");
         });
-        navigate('/');
+        setTimeout(() => {
+            navigate('/');
+          }, "2000");
     }   
     
 

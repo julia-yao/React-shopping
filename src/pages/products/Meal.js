@@ -5,7 +5,7 @@ import { API_MEAL_GET_DATA } from '../../constants'
 export default function Meal() {
   const meals = useLoaderData()
   return (
-    <div className="Ｍeal d-flex flex-wrap me-2">
+    <div className="Meal d-flex flex-wrap me-2">
       {meals.map(meal => (
         <Link key={meal.id} to={meal.id.toString()}>
           <Card style={{ width: '16rem' }} className="mealCard m-2">
