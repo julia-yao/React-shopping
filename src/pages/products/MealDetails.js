@@ -1,40 +1,9 @@
 import { useLoaderData, useParams } from "react-router-dom"
 import { Row, Col, Image, Button } from 'react-bootstrap'
-import { useState } from "react"
+import swal from 'sweetalert';
+
 
 export default function MealDetails() {
-<<<<<<< Updated upstream
-    const {id} = useParams()
-    const meal = useLoaderData()
-    
-    const handleAddCart = async (e)=>{
-      let res=null;
-      let metd = 'POST';
-      let url = 'http://localhost:8000/carts/';
-      let pUrl = url+meal.id;
-      let json = {id:meal.id,quantity:1}
-      //check if the meal is in cart
-      await fetch(pUrl)
-            .then(x=>{
-              if(!x.ok)return;
-              return x.json();
-            }).then(x=>res=x)
-      
-      if(res!=null){
-        console.log("already in cart");
-        json.quantity = res.quantity+1;
-        metd = 'PATCH';
-        url = pUrl;
-      }
-
-      fetch(url, {
-        method:metd,
-        headers:{"Content-Type":"application/json"},
-        body: JSON.stringify(json)
-      }).then(() =>{
-        console.log("carts contact added")
-      });
-=======
   const {id} = useParams()
   const meal = useLoaderData()
   
@@ -57,7 +26,6 @@ export default function MealDetails() {
       json.quantity = res.quantity +1;
       metd = 'PATCH';
       url = pUrl;
->>>>>>> Stashed changes
     }
 
 
@@ -73,17 +41,11 @@ export default function MealDetails() {
 
     return (
     <div className="MealDetails">
-<<<<<<< Updated upstream
-      <Row className="flex-md-row flex-column" onClick={handleAddCart}>
-        <Col xs md={7}>
-          <Image src={meal.url} className='img-fluid rounded'/>
-=======
       <Row className="flex-md-row flex-column justify-content-center" onClick={handleAddCart}>
         <Col xs md={5} className="m-3 m-md-0 d-flex justify-content-center">
           <div className="" style={{ hidth:'270px'}}>
             <Image src={meal.url} className='img-fluid rounded shadow-sm MealDetailImg'/>
           </div>
->>>>>>> Stashed changes
         </Col>
         <Col xs md={6} className="px-2">
           <h2>{meal.name}</h2>

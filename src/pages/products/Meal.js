@@ -1,20 +1,15 @@
 import { Link, useLoaderData } from "react-router-dom"
 import Card from 'react-bootstrap/Card';
-import {API_MEAL_GET_DATA} from '../../constants'
+import { API_MEAL_GET_DATA } from '../../constants'
 
 export default function Meal() {
   const meals = useLoaderData()
   return (
-    <div className="Meal d-flex flex-wrap me-2">
+    <div className="Ｍeal d-flex flex-wrap me-2">
       {meals.map(meal => (
         <Link key={meal.id} to={meal.id.toString()}>
-<<<<<<< Updated upstream
-          <Card style={{ width: '16rem' }} className="m-2">
-            <Card.Img variant="top" src={meal.url} />
-=======
           <Card style={{ width: '16rem' }} className="mealCard m-2">
-            <Card.Img variant="top" src={meal.url} className="MealImg"/>
->>>>>>> Stashed changes
+            <Card.Img variant="top" src={meal.url} className="mealImg"/>
             <Card.Body>
               <Card.Title>{meal.name}</Card.Title>
               <Card.Text>
