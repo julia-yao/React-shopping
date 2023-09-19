@@ -41,7 +41,7 @@ export default function MealDetails() {
 
     return (
     <div className="MealDetails">
-      <Row className="flex-md-row flex-column justify-content-center" onClick={handleAddCart}>
+      <Row className="flex-md-row flex-column justify-content-center">
         <Col xs md={5} className="m-3 m-md-0 d-flex justify-content-center">
           <div className="" style={{ hidth:'270px'}}>
             <Image src={meal.url} className='img-fluid rounded shadow-sm mealDetailImg'/>
@@ -50,7 +50,7 @@ export default function MealDetails() {
         <Col xs md={6} className="px-2">
           <h2>{meal.name}</h2>
           <p>售價為 NT. {meal.price} 元</p>
-          <div className="">
+          <div className="" onClick={handleAddCart}>
             <Button variant="warning me-2">
               加入購物車
             </Button>
