@@ -1,15 +1,23 @@
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom"
 import { API_MEAL_GET_DATA } from '../../constants'
 import MealList from "./MealList";
 
 export default function Meal() {
+  
   const meals = useLoaderData()
-  console.log(meals)
+
+ 
   
   return (
 
     <div className="meal">
-        { meals && <MealList data={meals} title="all meals!"/>}
+        { meals && <MealList data={meals}/>}
+
+        <MealList data={meals.filter((meals)=> meals.category === "breakfasts")}/>
+        <MealList data={meals.filter((meals)=> meals.category === "frenchtoast&cake")}/>
+        <MealList data={meals.filter((meals)=> meals.category === "coffee&tea")}/>
+        <MealList data={meals.filter((meals)=> meals.category === "juice")}/>
     </div>
     
   )

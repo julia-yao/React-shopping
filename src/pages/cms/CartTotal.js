@@ -9,7 +9,7 @@ export default function CartTotal({data}) {
   return (
     <div className="container">
         <Row className="my-2 align-items-center justify-content-between ps-2">
-          <Col xs md={7} className="">
+          <Col md={6} className="">
             <Form>
               <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                 <Form.Label>
@@ -20,9 +20,9 @@ export default function CartTotal({data}) {
               </Form.Group>
             </Form>
           </Col>
-          <Col xs md={4}>
+          <Col md={5}>
               <div className="text-success fs-3">
-                總金額 NT. <strong className="">{total}</strong>元
+                訂單總金額  NT. <strong className="">{total}</strong>元
               </div>
           </Col>
           <hr></hr>

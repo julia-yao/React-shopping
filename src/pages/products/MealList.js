@@ -2,9 +2,11 @@ import { Link } from "react-router-dom"
 import Card from 'react-bootstrap/Card';
 
 const MealList = ({data}) => {
-    const meals = data.name
+    const meals = data;
+   
   return (
     <div className="mealList">
+        
         <div className=" d-flex flex-wrap me-2">
             {meals.map(meal => (
                 <Link key={meal.id} to={meal.id.toString()}>

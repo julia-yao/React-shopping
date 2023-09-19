@@ -27,14 +27,14 @@ a,link {
   position: fixed;
   top: 0;
   width: 100%;
-  background:red;
+  background:whitesmoke;
 }
 .navFixed2 {
   z-index: 1;
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(23, 152, 152, 0.67)!important;
+  background: #f6dfb7ae;
   transition:  ease 0.3s;
 }
 

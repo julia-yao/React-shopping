@@ -1,10 +1,11 @@
 import { ListGroup } from "react-bootstrap"
 
 export default function ProList() {
+
   return (
     <div className="ProList">
         <ListGroup>
-            <ListGroup.Item variant="primary">
+            <ListGroup.Item variant="primary" onClick={clickCate}>
                 BREAKFAST＆SALAD<br/>早午餐沙拉
             </ListGroup.Item>
             <ListGroup.Item>
