@@ -1,22 +1,17 @@
 import { Table, Container, Row } from 'react-bootstrap';
 import CartItem from './CartItem';
 
-<<<<<<< Updated upstream
-const Cart = ({ data, handleDelete, decrement, increment}) => {
-
-=======
 const Cart = ({ data, handleDelete,setSub}) => {
->>>>>>> Stashed changes
     
     return ( 
         <>
         <Container>
             <h2>購物車</h2>
             <Row>
-                <Table>
+                <Table striped>
                     <thead>
-                        <tr className="text-center d-none d-md-table-row">
-                            <th>商品</th>
+                        <tr className="text-center">
+                            <th className="d-none d-md-block">商品</th>
                             <th>商品名稱</th>
                             <th>數量</th>
                             <th>金額</th>
@@ -26,11 +21,7 @@ const Cart = ({ data, handleDelete,setSub}) => {
                     </thead>
                     <tbody>
                         {data.map(x => (
-<<<<<<< Updated upstream
-                            <CartItem data={x} handleDelete={handleDelete} key={x.id}/>
-=======
                             <CartItem data={x} handleDelete={handleDelete} key={x.id} setSub={setSub}/>
->>>>>>> Stashed changes
                         ))}
                     </tbody>
                 </Table>

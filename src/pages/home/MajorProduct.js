@@ -2,16 +2,6 @@ import { Row, Col, Image } from 'react-bootstrap';
 
 export default function MajorProduct() {
   return (
-<<<<<<< Updated upstream
-    <div className='my-5' >
-        <Row className="flex-md-row flex-column-reverse justify-content-center align-items-center">
-            <Col xs lg={5} className="mt-3">
-                <div>
-                    <span className="text-success mb-3">
-                        FEATURED PRODUCTS
-                    </span>
-                    <h4 className="fw-bold text-success border-top py-2">美式培根早午餐</h4> 
-=======
     <div className='container my-md-5 my-3' >
         <Row className="justify-content-center">
             <Col md={9} className="m-3 p-3 shadow-lg">
@@ -48,20 +38,13 @@ export default function MajorProduct() {
                         FEATURED PRODUCTS
                     </span>
                     <p className="fw-bold text-success border-top py-2 fs-4">特製拿鐵</p> 
->>>>>>> Stashed changes
                     <p className="text-dark fs-5">
-                        新鮮現打蓬鬆舒芙蕾，一口滑嫩美式炒蛋加上培根及新鮮蔬菜，經典菜餚不能錯過。
+                        季節特選藝伎咖啡豆，配上細緻打發的奶泡，衝出濃醇口感。季節特選藝伎咖啡豆，配上細緻打發的奶泡，衝出濃醇口感。
                     </p>
-                    <Button variant="success">了解更多</Button>
                 </div>
             </Col>
-<<<<<<< Updated upstream
-            <Col xs lg="5">
-                <Image src="https://sarabethsrestaurants.jp/_img/page/menu/07.jpg" className='img-fluid rounded'/>
-=======
             <Col xs  md={4} lg={3} className="mt-3">
                 <Image src="https://images.pexels.com/photos/7362647/pexels-photo-7362647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" style={{width:"300px"}} className='img-fluid rounded-pill shadow'/>
->>>>>>> Stashed changes
             </Col>
         </Row>
     </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-
+import swal from 'sweetalert';
 
 export default function Contact() {
 
@@ -42,7 +42,7 @@ export default function Contact() {
         }).then(() =>{
             console.log("guest contact added")
             setIsPending(false)
-            
+            swal("留言成功!", "您的留言已送出，客服將快速為您服務！", "success");
         });
         setTimeout(() => {
             navigate('/');
