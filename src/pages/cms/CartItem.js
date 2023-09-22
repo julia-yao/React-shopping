@@ -41,9 +41,12 @@ const CartItem = ({ data, handleDelete,setSub}) => {
             </td>
             <td>{meal.name}</td>
             <td>
-                <Button className='mx-2' onClick={()=>UpdateQuantity(quantity-1)}>-</Button>
-                    {quantity} {/*1*/}
-                <Button className='mx-2' onClick={()=>UpdateQuantity(quantity+1)}>+</Button>
+                <div className='d-flex flex-column flex-md-row'>
+                    <Button className='mx-2 btn-sm' onClick={()=>UpdateQuantity(quantity-1)}>-</Button>
+                        {quantity} {/*1*/}
+                    <Button className='mx-2 btn-sm' onClick={()=>UpdateQuantity(quantity+1)}>+</Button>
+                </div>
+                
             </td>
             <td>{meal.price} 元</td>
             <td>{meal.price*quantity} 元</td>

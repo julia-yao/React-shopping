@@ -2,11 +2,18 @@ import { useState } from 'react';
 import { Col, Row, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+let coupons = [{name: "love99",num : 0.1}];
 
+function setDiscount(coupon) {
+  for(let i=0;i<coupon.length;i++){
+    if(coupons[i].name == coupon)
+    return coupons[i].num
+  }
+  return 0
+}
 
-
-export default function CartTotal({data}) {
-
+export default function CartTotal({data,handleDelete}) {
+  
   const [ coupon, setCoupon ] = useState("");
   function couponChange(e){
     setCoupon(e.target.value)
@@ -17,7 +24,7 @@ export default function CartTotal({data}) {
   for(let i=0;i<data.length;i++)
     subTotal+=data[i].st;
 
-  let discount= subTotal*0.1;
+  let discount= subTotal*setDiscount(coupon);
   const total = subTotal-discount;
 
   return (

@@ -47,6 +47,7 @@ const CartList = () => {
           .then(x=>x.json())
           .then(x=>setData(x))
         }).then(() =>{
+          
           swal("成功!", "購物車商品已移除", "success");
         });
             
@@ -72,7 +73,7 @@ const CartList = () => {
       { error && <div> {error} </div>}
       { isPending && <div> Loading...</div>}
       { data && <Cart data={data} handleDelete={handleDelete} setSub={UpdateSubTotals} />}
-      { subTotals && <CartTotal data={subTotals}/>}
+      { subTotals && <CartTotal data={subTotals} />}
     </div>
   );
 }
