@@ -44,7 +44,11 @@ return (
       </Navbar> 
     </header>
 
+<<<<<<< Updated upstream
     <main style={{marginTop:"60px"}}>
+=======
+    <main style={{marginTop:"70px"}} className="bg-secodenary">
+>>>>>>> Stashed changes
       <Breadcrumbs />
       <Outlet />
     </main>

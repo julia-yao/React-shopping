@@ -27,7 +27,11 @@ const CartItem = ({ data, handleDelete,setSub}) => {
         .then(()=>{
             fetch( API_CARTS_GET_DATA + data.id)
             .then(x => x.json())
+<<<<<<< Updated upstream
             .then(x => {setQuantity(x.quantity); setSub(data.id,meal.price*x.quantity);})
+=======
+            .then(x => {setQuantity(x.quantity);setSub(data.id,meal.price*x.quantity);})
+>>>>>>> Stashed changes
         });
     }
     

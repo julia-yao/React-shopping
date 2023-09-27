@@ -1,8 +1,30 @@
 import { Col, Row, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+<<<<<<< Updated upstream
 export default function CartTotal({data}) {
   let total = 0;
+=======
+let coupons = [{name: "love99",num : 0.1}];
+
+function setDiscount(coupon) {
+  for(let i=0;i<coupon.length;i++){
+    if(coupons[i].name === coupon)
+    return coupons[i].num
+  }
+  return 0
+}
+
+export default function CartTotal({data}) {
+  
+  const [ coupon, setCoupon ] = useState("");
+  function couponChange(e){
+    setCoupon(e.target.value)
+  }
+
+  
+  let subTotal = 0;
+>>>>>>> Stashed changes
   for(let i=0;i<data.length;i++)
     total+=data[i].st;
 

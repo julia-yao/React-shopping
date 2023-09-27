@@ -3,6 +3,7 @@ import Cart from "./Cart";
 import CartTotal from "./CartTotal";
 import swal from 'sweetalert';
 
+
 let internalSubs = [];
 
 const CartList = () => { 
@@ -22,6 +23,7 @@ const CartList = () => {
       setData(data);
       setIsPending(false);
       setError(null);
+      console.log("fetch")
     })
     .catch(err =>{
       setIsPending(false);
@@ -44,10 +46,11 @@ const CartList = () => {
         })
         .then(() =>{
           fetch('http://localhost:8000/carts/')
-          .then(x=>x.json())
-          .then(x=>setData(x))
+          .then(x => x.json())
+          .then(x => {setData(x);UpdateSubTotals()})
         }).then(() =>{
           swal("成功!", "購物車商品已移除", "success");
+          console.log("handleDelete")
         });
             
       } else {
@@ -55,7 +58,7 @@ const CartList = () => {
       }
     });
   }
-
+{/* data.id  price*quantity */}
   const UpdateSubTotals = (id,st)=>{
     for(let i=0;i<internalSubs.length;i++)
       if(internalSubs[i].id===id){
@@ -65,7 +68,12 @@ const CartList = () => {
       }
     internalSubs.push({id:id,st:st});
     setSubTotals([...internalSubs]);
+    console.log(UpdateSubTotals)
   };
+ 
+  
+  if( data == null || Object.keys(data).length === 0)
+      return (<div className="col">購物車內空空喔</div>);
   
   return (
     <div className="CartList">

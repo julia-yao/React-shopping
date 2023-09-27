@@ -9,9 +9,11 @@
   --light: #f6dfb7db;
   --dark: #212529;
 }
+
 body {
   margin: 0;
   font-family: "Poppins";
+  
 }
 
 button {
@@ -155,3 +157,8 @@ a,link {
   object-fit: scale-down;
 }
 
+.footLayout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

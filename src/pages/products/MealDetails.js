@@ -36,7 +36,8 @@ export default function MealDetails() {
     }).then(() =>{
       console.log("carts added")
       swal("成功!", "商品已加入購物車", "success");
-    });
+      
+    })
   }
 
     return (
@@ -50,8 +51,8 @@ export default function MealDetails() {
         <Col xs md={6} className="px-2">
           <h2>{meal.name}</h2>
           <p>售價為 NT. {meal.price} 元</p>
-          <div className="" onClick={handleAddCart}>
-            <Button variant="warning me-2">
+          <div className="">
+            <Button variant="warning me-2" onClick={handleAddCart}>
               加入購物車
             </Button>
             <Button variant="danger">
@@ -60,7 +61,11 @@ export default function MealDetails() {
           </div>  
           <div className="details mt-3 border-top py-2">
             <p>餐點介紹：{meal.info}</p>
-            <p>本餐點內含：{meal.danger}，有過敏體質者請注意。</p>
+            <p style={{
+              visibility: meal.danger == "" && 'hidden',
+            }}>
+              本餐點內含：{meal.danger}，有過敏體質者請注意。
+            </p>
           </div>
         </Col>
       </Row>
