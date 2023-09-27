@@ -3,7 +3,6 @@ import {API_MEAL_GET_DATA} from '../../constants';
 import {API_CARTS_GET_DATA} from '../../constants';
 import { useEffect, useState } from "react";
 
-
 const CartItem = ({ data, handleDelete,setSub}) => {
     const [ meal, setMeal ] = useState(null)
     const [ quantity, setQuantity ] = useState(data.quantity)
@@ -13,7 +12,7 @@ const CartItem = ({ data, handleDelete,setSub}) => {
         .then(x => x.json())
         .then(x => {setMeal(x); setSub(data.id,x.price*quantity);})
     },[]);
-
+    
     const UpdateQuantity = (num) => {
         if(num<1)//escape when num == 0
             return;
@@ -27,11 +26,7 @@ const CartItem = ({ data, handleDelete,setSub}) => {
         .then(()=>{
             fetch( API_CARTS_GET_DATA + data.id)
             .then(x => x.json())
-<<<<<<< Updated upstream
             .then(x => {setQuantity(x.quantity); setSub(data.id,meal.price*x.quantity);})
-=======
-            .then(x => {setQuantity(x.quantity);setSub(data.id,meal.price*x.quantity);})
->>>>>>> Stashed changes
         });
     }
     
@@ -56,5 +51,5 @@ const CartItem = ({ data, handleDelete,setSub}) => {
         </tr>
     );
 }
- 
+
 export default CartItem;

@@ -3,14 +3,11 @@ import Cart from "./Cart";
 import CartTotal from "./CartTotal";
 import swal from 'sweetalert';
 
-
-let internalSubs = [];
-
 const CartList = () => { 
   const [ data, setData ] = useState(null)
   const [ isPending, setIsPending ] = useState(false)
   const [ error, setError ] = useState(null)
-  const [ subTotals, setSubTotals ] = useState(internalSubs)
+  const [ subTotals, setSubTotals ] = useState([])
     
   useEffect(() => {
     fetch('http://localhost:8000/carts')
@@ -41,13 +38,17 @@ const CartList = () => {
     })
     .then((willDelete) => {
       if (willDelete) {
+        
         fetch('http://localhost:8000/carts/' + id, {
           method:'DELETE'
         })
         .then(() =>{
           fetch('http://localhost:8000/carts/')
           .then(x => x.json())
-          .then(x => {setData(x);UpdateSubTotals()})
+          .then(x => {
+            setData(x);
+            RemoveSubTotalItem(id);
+          })
         }).then(() =>{
           swal("成功!", "購物車商品已移除", "success");
           console.log("handleDelete")
@@ -58,19 +59,20 @@ const CartList = () => {
       }
     });
   }
-{/* data.id  price*quantity */}
+  {/* data.id  price*quantity */}
   const UpdateSubTotals = (id,st)=>{
-    for(let i=0;i<internalSubs.length;i++)
-      if(internalSubs[i].id===id){
-        internalSubs[i].st=st;
-        setSubTotals([...internalSubs]);
+    for(let i=0;i<subTotals.length;i++)
+      if(subTotals[i].id===id){
+        subTotals[i].st=st;
+        setSubTotals([...subTotals]);
         return;
       }
-    internalSubs.push({id:id,st:st});
-    setSubTotals([...internalSubs]);
-    console.log(UpdateSubTotals)
+      subTotals.push({id:id,st:st});
+    setSubTotals([...subTotals]);
+    console.log(UpdateSubTotals);
   };
- 
+
+  const RemoveSubTotalItem=(id)=>setSubTotals(subTotals.filter(x=>x.id!==id));
   
   if( data == null || Object.keys(data).length === 0)
       return (<div className="col">購物車內空空喔</div>);

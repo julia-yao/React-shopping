@@ -4,22 +4,16 @@ import { Outlet } from 'react-router-dom';
 import ProList from './products/ProList';
 
 export default function Products() {
-
-  const [ cates,setCate ]= useState()
-
-  const clickCate = (id)=>{
-    const newCate = meals.filter(meals)=> meals.id === id );
-    setCate(newCate)
-  }
+  const [ cat,setCate ]= useState("");
+  const clickCate = (c)=>{setCate(c); console.log(cat);}
 
   return (
     <Container className='Products my-3 mx-auto'>
       <Row className='flex-md-row flex-column'>
         <Col xs md={4} lg={3}>{<ProList clickCate={clickCate}/>}</Col>
-        <Col xs md={7} lg={9}>{<Outlet context={setCate}/>} </Col>
+        <Col xs md={7} lg={9}>{<Outlet context={[cat]}/>} </Col>
       </Row>
       
     </Container>
-    
   )
 }

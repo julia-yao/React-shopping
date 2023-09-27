@@ -211,21 +211,12 @@
   ],
   "carts": [
     {
-<<<<<<< Updated upstream
-      "id": 9,
-      "quantity": 2
-=======
-      "id": 2,
-      "quantity": 1
+      "id": 11,
+      "quantity": 10
     },
     {
-      "id": 17,
-      "quantity": {}
-    },
-    {
-      "id": 10,
-      "quantity": 4
->>>>>>> Stashed changes
+      "id": 6,
+      "quantity": 3
     }
   ]
 }
