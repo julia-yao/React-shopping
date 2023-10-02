@@ -3,6 +3,7 @@ import {API_MEAL_GET_DATA} from '../../constants';
 import {API_CARTS_GET_DATA} from '../../constants';
 import { useEffect, useState } from "react";
 
+
 const CartItem = ({ data, handleDelete,setSub}) => {
     const [ meal, setMeal ] = useState(null)
     const [ quantity, setQuantity ] = useState(data.quantity)
@@ -12,7 +13,7 @@ const CartItem = ({ data, handleDelete,setSub}) => {
         .then(x => x.json())
         .then(x => {setMeal(x); setSub(data.id,x.price*quantity);})
     },[]);
-    
+
     const UpdateQuantity = (num) => {
         if(num<1)//escape when num == 0
             return;
@@ -26,7 +27,7 @@ const CartItem = ({ data, handleDelete,setSub}) => {
         .then(()=>{
             fetch( API_CARTS_GET_DATA + data.id)
             .then(x => x.json())
-            .then(x => {setQuantity(x.quantity); setSub(data.id,meal.price*x.quantity);})
+            .then(x => {setQuantity(x.quantity);setSub(data.id,meal.price*x.quantity);})
         });
     }
     
@@ -34,12 +35,17 @@ const CartItem = ({ data, handleDelete,setSub}) => {
       return (<tr><td>ERROR</td></tr>);
     return ( 
         <tr className="align-middle text-center" to={meal.id.toString()} key={meal.id}>
-            <td className="d-none d-md-block"><Image variant="top" src={meal.url} style={{ width:'12rem',objectFit:"cover" }}/></td>
+            <td className="d-none d-md-block">
+                <Image variant="top" src={meal.url} style={{ width:'12rem',objectFit:"cover" }}/>
+            </td>
             <td>{meal.name}</td>
             <td>
-                <Button className='mx-2' onClick={()=>UpdateQuantity(quantity-1)}>-</Button>
-                    {quantity} {/*1*/}
-                <Button className='mx-2' onClick={()=>UpdateQuantity(quantity+1)}>+</Button>
+                <div className='d-flex flex-column flex-md-row'>
+                    <Button className='mx-2 btn-sm' onClick={()=>UpdateQuantity(quantity-1)}>-</Button>
+                        {quantity} {/*1*/}
+                    <Button className='mx-2 btn-sm' onClick={()=>UpdateQuantity(quantity+1)}>+</Button>
+                </div>
+                
             </td>
             <td>{meal.price} 元</td>
             <td>{meal.price*quantity} 元</td>
@@ -51,5 +57,5 @@ const CartItem = ({ data, handleDelete,setSub}) => {
         </tr>
     );
 }
-
+ 
 export default CartItem;

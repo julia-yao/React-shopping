@@ -44,7 +44,7 @@ return (
       </Navbar> 
     </header>
 
-    <main style={{marginTop:"60px"}}>
+    <main style={{marginTop:"70px"}} className="bg-secodenary">
       <Breadcrumbs />
       <Outlet />
     </main>
@@ -52,7 +52,13 @@ return (
     <footer>
       <FootLayout />
     </footer>
+
+  
+
   </div>
+  
+  
+        
 );
 }
 

@@ -14,11 +14,13 @@ import NotFound from './pages/NotFound'
 import Meal,{ mealLoader } from './pages/products/Meal'
 import MealDetails, { mealDetailsLoader } from './pages/products/MealDetails'
 import MealError from './pages/products/MealError'
-import CartList from './pages/cms/CartList'
+import CartList from './pages/cart/CartList'
+
 
 //layout
 import RootLayout from './layout/RootLayout'
 import HelpLayout from './layout/HelpLayout'
+import Checkout from './pages/checkout/Checkout'
 
 
 
@@ -46,10 +48,10 @@ createBrowserRouter(
       <Route path='help' element={<HelpLayout />}>
         <Route path='faq' element={<Faq />} />
         <Route path='contact' element={<Contact />}/>
-        
       </Route>
 
       <Route path="cart" element={<CartList />} />
+      <Route path="checkout" element={<Checkout />} />
 
       <Route path="*" element={<NotFound />} />
     </Route>
