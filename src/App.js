@@ -51,7 +51,11 @@ createBrowserRouter(
       </Route>
 
       <Route path="cart" element={<CartList />} />
-      <Route path="checkout" element={<Checkout />} />
+      <Route 
+        path="checkout" 
+        element={<Checkout />} 
+        loader={mealLoader}
+      />
 
       <Route path="*" element={<NotFound />} />
     </Route>

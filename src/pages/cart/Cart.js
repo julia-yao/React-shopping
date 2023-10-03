@@ -6,7 +6,10 @@ const Cart = ({ data, handleDelete,setSub}) => {
     return ( 
         <>
         <Container>
-            <h2>購物車</h2>
+            <h2>
+                <i className="bi bi-cart-fill mx-2"></i>
+                購物車
+            </h2>
             <Row>
                 <Table striped>
                     <thead>

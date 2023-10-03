@@ -54,7 +54,7 @@ export default function CartTotal({data}) {
         </Row>
         <div className="text-end d-flex justify-content-end my-2">
             <Link to="/products" className="btn btn-outline-success mx-2">繼續購物</Link>
-            <Link to="/home" className="btn btn-warning">前往結帳</Link>
+            <Link to="/checkout" className="btn btn-warning">前往結帳</Link>
         </div>
 
       </div>

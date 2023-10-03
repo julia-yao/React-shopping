@@ -1,75 +1,57 @@
 import { Table, Container, Row, Col, Image } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Link,useLoaderData } from "react-router-dom";
+import { useEffect} from 'react';
+import Checkinfo from './Checkinfo';
 
 
 export default function Checkout() {
+    let carts = [];
+    useEffect(() => {
+        fetch('http://localhost:8000/carts')
+        .then(res => {
+          if(!res.ok)
+            throw Error('頁面無法獲取資料');
+          return res.json()
+        })
+        .then((x)=>{
+           carts.push(x);
+        })
+    },[]);
+      console.log(carts[0])
+    
+    const meals = useLoaderData();
 
-    const Filterfun = (array,blan)=>{
-        let result =[]
-        for(let i=0;i<array.length;i++)
-          if(blan(array[i])){
-            result.push(array[i])
-            result.concat(carts)
-          }
-        return result
-      }
-     
-    let carts = 
-      {
-        "id": 1,
-        "quantity": 7
-      }
-    
-    let meals = [
-        {
-            "id": 1,
-            "category": "breakfasts",
-            "name": "德國培根早午餐",
-            "price": 500,
-            "url": "https://sarabethsrestaurants.jp/_img/page/menu/07.jpg",
-            "info": "使用農場飼養雞蛋和煙燻培根，配上當日現作鬆餅和新鮮沙拉。",
-            "danger": "雞蛋/培根/小麥麵粉"
-          },
-          {
-            "id": 2,
-            "category": "breakfasts",
-            "name": "煙燻鮭魚早午餐",
-            "price": 500,
-            "url": "https://sarabethsrestaurants.jp/_img/page/menu/09.jpg",
-            "info": "使用農場飼養雞蛋做成歐姆蛋和煙燻培根，配上當日現作鬆餅和新鮮沙拉。",
-            "danger": "雞蛋/魚"
-          },
-          {
-            "id": 3,
-            "category": "breakfasts",
-            "name": "香烤雞腿早午餐",
-            "price": 500,
-            "url": "https://sarabethsrestaurants.jp/_img/page/menu/10.jpg",
-            "info": "使用農場飼養雞蛋和煙燻培根，配上當日現作鬆餅。",
-            "danger": "雞蛋/小麥麵粉"
-          }
-    ]
-    
-
-    
     let data =[]
-    if(carts!==""){
-    data = Filterfun(meals,(x)=> x.id ===carts.id)
-    console.log(data)
+    if(carts!==''){
+        for(let i=0;i<carts.length;i++){
+            for(let j=0;j<meals.length;j++){
+                if(carts[i].id === meals[j].id){
+                    meals[j].quantity = carts[i].quantity
+                    data.push(meals[j])
+                }
+            }
+        }
     }
 
-        let quantity = data.quantity
-        let subTotal = quantity*data.price;
-        let discount= subTotal*(0.1);
-        const total = subTotal-discount; 
+    let subTotal = 0
+    for(let i=0;i<data.length;i++){
+        subTotal = subTotal+data[i].quantity*data[i].price;
+    }
+    let discount= subTotal*(0.1);
+    const total = subTotal-discount; 
 
   return (
     <div className="checkout">
         <>
         <Container>
-            <h2>確認訂單</h2>
-            <Row>
-                <Col>
+            <h2>
+                <i className="bi bi-bag-check-fill mx-2"></i>
+                確認訂單
+            </h2>
+            <hr className=''/>
+            <Row className='justify-content-around m-3'>
+                <Col className='col-5 border p-3'>
+                    <h5>訂單清單</h5>
                     <Table className='table-shadow'>
                         <thead>
                             <tr className="text-center">
@@ -87,9 +69,9 @@ export default function Checkout() {
                                         <Image variant="top" src={meal.url} style={{ width:'8rem',objectFit:"cover" }}/>
                                     </td>
                                     <td>{meal.name}</td>
-                                    <td>{quantity}</td>
+                                    <td>{meal.quantity}</td>
                                     <td>{meal.price} 元</td>
-                                    <td>{quantity*meal.price} 元</td>
+                                    <td>{meal.quantity*meal.price} 元</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -103,16 +85,18 @@ export default function Checkout() {
                     </div>
                 </Col>
                 
-                <Col>
-                    
-                    <div className="text-end d-flex justify-content-end my-2">
-                        <Link to="/" className="btn btn-outline-success mx-2">修改購物車</Link>
-                        <Link to="/" className="btn btn-warning">送出訂單</Link>
-                    </div>
+                <Col className='col-5 border p-3'>
+                    <Checkinfo />
                 </Col>
+                <hr className='m-3'/>
+                <div className="text-end d-flex justify-content-center">
+                    <Link to="/" className="btn btn-outline-success mx-2">修改購物車</Link>
+                    <Link to="/" className="btn btn-warning">送出訂單</Link>
+                </div>
             </Row>    
         </Container>
         </>
     </div>
   )
 }
+
