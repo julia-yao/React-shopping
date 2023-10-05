@@ -175,48 +175,34 @@
   "guest": [
     {
       "name": "00000",
-      "tel": "000",
-      "mail": "jl@gmail.com",
-      "note": "9999",
-      "id": 41
-    },
-    {
-      "name": "00000",
       "tel": "23-456878",
       "mail": "test@gmail.com",
       "note": "With our sponsor Mockend and a simple GitHub repo, you can have your own fake online REST server in seconds.",
-      "id": 42
-    },
-    {
-      "name": "amrib",
-      "tel": "23-456878",
-      "mail": "jl@gmail.com",
-      "note": "f setTimeout() is called with delay value that's not a number, implicit type coercion is silently done on the value to convert it to a number. For example, the following code incorrectly uses the string \"1000\" for the delay value, rather than the number 1000 – but it nevertheless works, because when the code runs, the string is coerced into the number 1000, and so the code executes 1 second later.",
-      "id": 43
-    },
-    {
-      "name": "00000",
-      "tel": "23-456878",
-      "mail": "fjoewj@gmail.com",
-      "note": "f setTimeout() is called with delay value that's not a number, implicit type coercion is silently done on the value to convert it to a number. For example, the following code incorrectly uses the string \"1000\" for the delay value, rather than the number 1000 – but it nevertheless works, because when the code runs, the string is coerced into the number 1000, and so the code executes 1 second later.",
-      "id": 44
-    },
-    {
-      "name": "amrib",
-      "tel": "0000000",
-      "mail": "fjoewj@gmail.com",
-      "note": "Below you'll find examples using Fetch API but you can JSONPlaceholder with any other language.\n\nYou can copy paste the code in your browser console to quickly test JSONPlaceholder.\n\n",
-      "id": 45
+      "id": 30
     }
   ],
   "carts": [
     {
-      "id": 11,
-      "quantity": 10
+      "id": 2,
+      "quantity": 5
     },
     {
-      "id": 6,
-      "quantity": 3
+      "id": 1,
+      "quantity": 2
+    },
+    {
+      "id": 14,
+      "quantity": 1
+    }
+  ],
+  "checkout": [
+    {
+      "name": "mario",
+      "tel": "032-2277890",
+      "address": "蘑菇村瑪麗區19號",
+      "note": "準時",
+      "pay": "信用卡",
+      "id": 1
     }
   ]
 }

@@ -52,9 +52,15 @@ export default function CartTotal({data}) {
           </Col>
           <hr></hr>
         </Row>
-        <div className="text-end d-flex justify-content-end my-2">
-            <Link to="/products" className="btn btn-outline-success mx-2">繼續購物</Link>
-            <Link to="/checkout" className="btn btn-warning">前往結帳</Link>
+        <div className="text-end d-flex justify-content-end mb-4">
+            <Link to="/products" className="btn btn-outline-success mx-2">
+              <i className="bi bi-caret-left-fill me-1"></i>
+              繼續購物
+            </Link>
+            <Link to="/checkout" className="btn btn-warning">
+              前往結帳
+              <i className="bi bi-caret-right-fill ms-1"></i>
+            </Link>
         </div>
 
       </div>

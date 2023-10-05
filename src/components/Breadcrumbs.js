@@ -19,7 +19,7 @@ export default function Breadcrumbs() {
     
 
   return (
-    <div className="breadCrumbs ms-5">
+    <div className="breadCrumbs ms-md-5 m-2">
         {crumbs}
     </div>
   )

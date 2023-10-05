@@ -21,6 +21,7 @@ import CartList from './pages/cart/CartList'
 import RootLayout from './layout/RootLayout'
 import HelpLayout from './layout/HelpLayout'
 import Checkout from './pages/checkout/Checkout'
+import Order from './pages/checkout/Order'
 
 
 
@@ -47,15 +48,12 @@ createBrowserRouter(
 
       <Route path='help' element={<HelpLayout />}>
         <Route path='faq' element={<Faq />} />
-        <Route path='contact' element={<Contact />}/>
+        <Route path='contact' element={<Contact />} />
       </Route>
 
       <Route path="cart" element={<CartList />} />
-      <Route 
-        path="checkout" 
-        element={<Checkout />} 
-        loader={mealLoader}
-      />
+      <Route path="checkout" element={<Checkout />} />
+      <Route path="order" element={<Order />} />
 
       <Route path="*" element={<NotFound />} />
     </Route>

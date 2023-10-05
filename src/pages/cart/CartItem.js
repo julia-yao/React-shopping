@@ -36,11 +36,11 @@ const CartItem = ({ data, handleDelete,setSub}) => {
     return ( 
         <tr className="align-middle text-center" to={meal.id.toString()} key={meal.id}>
             <td className="d-none d-md-block">
-                <Image variant="top" src={meal.url} style={{ width:'12rem',objectFit:"cover" }}/>
+                <Image variant="top" src={meal.url} style={{ width:'10rem',height:'10rem', objectFit:"cover" }}/>
             </td>
             <td>{meal.name}</td>
             <td>
-                <div className='d-flex justify-content-center flex-column flex-md-row'>
+                <div className='d-flex justify-content-center flex-column flex-md-row align-items-center'>
                     <Button className='mx-2 btn-sm' onClick={()=>UpdateQuantity(quantity-1)}>-</Button>
                         {quantity} {/*1*/}
                     <Button className='mx-2 btn-sm' onClick={()=>UpdateQuantity(quantity+1)}>+</Button>

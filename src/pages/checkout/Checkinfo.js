@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
-import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 
-export default function Checkinfo() {
+export default function Checkinfo(setIsPending) {
 
     const [ name, setName ] = useState("");
     function nameChange(e){
@@ -29,12 +28,11 @@ export default function Checkinfo() {
         setPay(e.target.value)
     }
 
-    const [ isPending,setIsPending ] = useState(false);
-    const navigate = useNavigate();
+    
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        const checkout = { name,tel,address,note };
+        const checkout = { name,tel,address,pay,note };
 
         setIsPending('true');
 
@@ -45,11 +43,7 @@ export default function Checkinfo() {
         }).then(() =>{
             console.log("send checkout")
             setIsPending(false)
-            swal("送出訂單成功!", "您的訂單已送出，三日內將出貨！", "success");
-        });
-        setTimeout(() => {
-            navigate('/');
-          }, "2000");
+        })
     }   
     
 
@@ -78,8 +72,6 @@ export default function Checkinfo() {
                 <Form.Label>留言</Form.Label>
                 <Form.Control as="textarea" rows={1} cols={1} name="message" value={note} onChange={noteChange}/>
             </Form.Group>
-            {!isPending && <Button type="submit">送出訂單</Button>}
-            {isPending && <Button disabled type="submit">正在送出資料...</Button>}
         </Form>
     </div>
 

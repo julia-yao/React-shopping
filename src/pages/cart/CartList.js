@@ -46,7 +46,7 @@ const CartList = () => {
         .then(() =>{
           fetch('http://localhost:8000/carts/')
           .then(x => x.json())
-          .then(x => {setData(x)})
+          .then(x => {setData(x); RemoveSubTotalItem(id);})
         }).then(() =>{
           swal("成功!", "購物車商品已移除", "success");
           console.log("handleDelete")
@@ -57,29 +57,29 @@ const CartList = () => {
       }
     });
   }
-{/* data.id  price*quantity */}
+  {/* data.id  price*quantity */}
   const UpdateSubTotals = (id,st)=>{
-    for(let i=0;i<internalSubs.length;i++)
-      if(internalSubs[i].id===id){
-        internalSubs[i].st=st;
-        setSubTotals([...internalSubs]);
+    for(let i=0;i<subTotals.length;i++)
+      if(subTotals[i].id===id){
+        subTotals[i].st=st;
+        setSubTotals([...subTotals]);
         return;
       }
-    internalSubs.push({id:id,st:st});
-    setSubTotals([...internalSubs]);
-    console.log(UpdateSubTotals)
+      subTotals.push({id:id,st:st});
+    setSubTotals([...subTotals]);
   };
- 
+
+  const RemoveSubTotalItem=(id)=>setSubTotals(subTotals.filter(x=>x.id!==id));
   
   if( data == null || Object.keys(data).length === 0)
       return (<div className="col">購物車內空空喔</div>);
   
   return (
-    <div className="CartList">
+    <div className="CartList p-1">
       { error && <div> {error} </div>}
       { isPending && <div> Loading...</div>}
       { data && <Cart data={data} handleDelete={handleDelete} setSub={UpdateSubTotals} />}
-      { subTotals && <CartTotal data={subTotals} />}
+      { subTotals && <CartTotal data={subTotals} setSub={UpdateSubTotals}/>}
       
     </div>
   );
