@@ -5,6 +5,7 @@ import {
   RouterProvider
 } from 'react-router-dom'
 
+
 //pages
 import Home from './pages/Home'
 import Products from './pages/Products'
@@ -22,10 +23,6 @@ import RootLayout from './layout/RootLayout'
 import HelpLayout from './layout/HelpLayout'
 import Checkout from './pages/checkout/Checkout'
 import Order from './pages/checkout/Order'
-
-
-
-
 
 
 const router = 
