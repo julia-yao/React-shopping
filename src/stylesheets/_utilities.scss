@@ -469,7 +469,7 @@ $utilities: map-merge(
       property: font-size,
       class: fs-s,
       values: (
-        48:48px
+        64:64px
       )
     ),
     "font-style": (
@@ -566,7 +566,7 @@ $utilities: map-merge(
       property: background-color,
       class: bg,
       local-vars: (
-        "bg-opacity": 1
+        "bg-opacity": .9
       ),
       values: map-merge(
         $utilities-bg-colors,
@@ -583,6 +583,7 @@ $utilities: map-merge(
         25: .25,
         50: .5,
         75: .75,
+        90: .9,
         100: 1
       )
     ),

@@ -4,7 +4,7 @@ import {
   Route, 
   RouterProvider
 } from 'react-router-dom'
-
+import './index.scss'
 
 //pages
 import Home from './pages/Home'

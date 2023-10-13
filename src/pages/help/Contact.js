@@ -52,7 +52,7 @@ export default function Contact() {
 
 
   return (
-    <div className="Contact my-5 mx-auto bg-light p-3 col-md-7">
+    <div className="Contact my-5 mx-auto bg-secondary border-radius p-3 col-md-7">
        <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                 <Form.Label>姓名</Form.Label>
@@ -70,8 +70,10 @@ export default function Contact() {
                 <Form.Label>留言</Form.Label>
                 <Form.Control as="textarea" rows={5} cols={5} name="message" value={note} onChange={noteChange}/>
             </Form.Group>
-            {!isPending && <Button type="submit">送出</Button>}
-            {isPending && <Button disabled type="submit">正在送出資料...</Button>}
+            <div className='d-flex justify-content-center align-items-center'>
+                {!isPending && <Button type="submit" className='d-flex'>送出留言</Button>}
+                {isPending && <Button disabled type="submit">正在送出資料...</Button>}
+            </div>
         </Form>
     </div>
 

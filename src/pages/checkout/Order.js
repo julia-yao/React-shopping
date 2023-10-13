@@ -65,7 +65,7 @@ async function checkoutLoader(setData,setInfo){
           </Row>    
           <hr className='mb-2'/>
           <div className="d-flex justify-content-center m-3">
-            <Button type="submit" onClick={handleClick}>確認結帳</Button>
+            <Button type="submit" className="btn btn-warning" onClick={handleClick}>確認結帳</Button>
           </div>
       </Container>
     </div>

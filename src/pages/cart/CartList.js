@@ -72,7 +72,7 @@ const CartList = () => {
   const RemoveSubTotalItem=(id)=>setSubTotals(subTotals.filter(x=>x.id!==id));
   
   if( data == null || Object.keys(data).length === 0)
-      return (<div className="col">購物車內空空喔</div>);
+      return (<div className="col fw-bold m-5">購物車內空空喔</div>);
   
   return (
     <div className="CartList p-1">

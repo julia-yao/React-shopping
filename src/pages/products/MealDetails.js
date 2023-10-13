@@ -42,13 +42,13 @@ export default function MealDetails() {
 
     return (
     <div className="MealDetails">
-      <Row className="flex-md-row flex-column justify-content-center">
+      <Row className="flex-md-row flex-column justify-content-center align-content-center">
         <Col xs md={5} className="m-3 m-md-0 d-flex justify-content-center">
           <div className="" style={{ hidth:'270px'}}>
             <Image src={meal.url} className='img-fluid rounded shadow-sm mealDetailImg'/>
           </div>
         </Col>
-        <Col xs md={6} className="px-2">
+        <Col xs md={6} className="p-2 m-3 m-md-0 text-light">
           <h2>{meal.name}</h2>
           <p>售價為 NT. {meal.price} 元</p>
           <div className="">

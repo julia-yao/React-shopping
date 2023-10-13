@@ -4,8 +4,8 @@ import { Container, Row, } from 'react-bootstrap';
 
 export default function NotFound() {
   return (
-    <Container className="my-5">
-        <Row className="NotFound">
+    <Container className="NotFound">
+        <Row className="my-5">
     
             <h2>Sorry</h2>
             <p>您造訪的頁面不存在。</p>

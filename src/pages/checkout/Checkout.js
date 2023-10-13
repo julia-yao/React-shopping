@@ -55,7 +55,7 @@ export default function Checkout() {
             <hr className='m-2'/>
             <div className="d-flex justify-content-end m-3">
                 <Link to="/cart" className="btn btn-outline-success mx-2"><i className="bi bi-caret-left-fill me-1"></i>修改購物車</Link>
-                {!isPending && <Link to="/order"><Button type="submit">送出訂單<i className="bi bi-caret-right-fill ms-1"></i></Button></Link>}
+                {!isPending && <Link to="/order"><Button type="submit" className="btn btn-warning">送出訂單<i className="bi bi-caret-right-fill ms-1"></i></Button></Link>}
                 {isPending && <Button disabled type="submit">正在送出資料...</Button>}
             </div>
         </Container>

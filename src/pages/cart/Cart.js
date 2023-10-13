@@ -14,7 +14,7 @@ const Cart = ({ data, handleDelete,setSub}) => {
                 <Col className='m-3'>
                     <Table striped>
                         <thead>
-                            <tr className="text-center text-nowrap">
+                            <tr className="text-center text-nowrap bg-secondary">
                                 <th className="d-none d-md-block">商品</th>
                                 <th>商品名稱</th>
                                 <th>數量</th>

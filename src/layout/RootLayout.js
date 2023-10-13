@@ -44,7 +44,7 @@ return (
       </Navbar> 
     </header>
 
-    <main style={{marginTop:"70px"}} className="bg-secodenary">
+    <main style={{marginTop:"74px"}} className="bg-light">
       <Breadcrumbs />
       <Outlet />
     </main>

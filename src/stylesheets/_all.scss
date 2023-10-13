@@ -1,8 +1,7 @@
 
 body {
   margin: 0;
-  font-family: "Poppins";
-  
+  font-family: 'Lato', sans-serif;
 }
 
 button {
@@ -25,7 +24,7 @@ a,link {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #f6dfb7ae;
+  background: #f8f0e1ae;
   transition:  ease 0.3s;
 }
 
@@ -56,6 +55,39 @@ a,link {
   position: absolute;
   font-family: "BernhardScriptW01-Light";
   font-style: normal;
+}
+
+.cafelocation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.cafetitle{
+  position: absolute;
+  top: 36px;
+  right: -40px;
+  text-shadow: 2px 2px 2px rgb(123, 123, 123);
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+}
+.cafeline{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 8px;
+  writing-mode: vertical-rl;
+}
+.cafeline hr{
+  height: 100px;
+}
+.cafeImg{
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 /* productMask */
@@ -124,7 +156,7 @@ a,link {
   display: none;
 }
 .breadCrumbs .crumb a {
-  color: rgb(22, 21, 21);
+  color: #57361d;
 }
 
 /* meal */

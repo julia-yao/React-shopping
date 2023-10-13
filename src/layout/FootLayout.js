@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function FootLayout() {
   return (
-    <div className='footLayout bg-light'>
+    <div className='footLayout bg-info'>
 
       <div className="p-4">
         <div className="">
