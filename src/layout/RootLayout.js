@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { Container, Nav, Navbar, Image } from 'react-bootstrap';
 import FootLayout from "./FootLayout";
-import Breadcrumbs from "../components/Breadcrumbs";
-
 
 
 function RootLayout() {
-
   const [ color, setColor ] = useState('navFixed');
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, []);
   
   const changeBgColor = () => {
     if(window.scrollY >= 70){
@@ -24,6 +28,12 @@ function RootLayout() {
   }, []);
   
 return (
+  <>
+  {loading ? (
+  <div className="loader-container">
+    <div className="throbber-loader"></div>
+  </div>
+  ):(
   <div className="RootLayout" >
     <header className={color}>
       <Navbar expand="lg" className="">
@@ -44,20 +54,16 @@ return (
       </Navbar> 
     </header>
 
-    <main style={{marginTop:"74px"}} className="bg-light">
-      <Breadcrumbs />
+    <main style={{marginTop:"74px",minHeight:"600px"}} className="bg-light">
       <Outlet />
     </main>
 
     <footer>
       <FootLayout />
     </footer>
-
-  
-
   </div>
-  
-  
+  )}
+  </>
         
 );
 }

@@ -16,7 +16,7 @@ export default function Banner() {
             </div>
         </div>
       </div>
-      <div className="container my-md-5 my-3 p-3">
+      <div className="container my-lg-5 my-3 p-3">
         <Row className="justify-content-center">
           <Col md={5} className="cafelocation">
             <div className="m-5">

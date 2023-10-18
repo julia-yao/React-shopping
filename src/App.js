@@ -16,13 +16,14 @@ import Meal,{ mealLoader } from './pages/products/Meal'
 import MealDetails, { mealDetailsLoader } from './pages/products/MealDetails'
 import MealError from './pages/products/MealError'
 import CartList from './pages/cart/CartList'
+import Checkout from './pages/checkout/Checkout'
+import Order from './pages/checkout/Order'
 
 
 //layout
 import RootLayout from './layout/RootLayout'
 import HelpLayout from './layout/HelpLayout'
-import Checkout from './pages/checkout/Checkout'
-import Order from './pages/checkout/Order'
+
 
 
 const router = 
