@@ -361,7 +361,7 @@ $prefix:                      $variable-prefix !default;
 // The gradient which is added to components if `$enable-gradients` is `true`
 // This gradient is also added to elements with `.bg-gradient`
 // scss-docs-start variable-gradient
-$gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
+$gradient: linear-gradient(90deg, rgba($white, .15), rgba($white, 0)) !default;
 // scss-docs-end variable-gradient
 
 // Spacing
@@ -723,7 +723,7 @@ $input-btn-font-size:         $font-size-base !default;
 $input-btn-line-height:       $line-height-base !default;
 
 $input-btn-focus-width:         .25rem !default;
-$input-btn-focus-color-opacity: .25 !default;
+$input-btn-focus-color-opacity: .75 !default;
 $input-btn-focus-color:         rgba($component-active-bg, $input-btn-focus-color-opacity) !default;
 $input-btn-focus-blur:          .25rem !default;//cos
 $input-btn-focus-box-shadow:    0 0 $input-btn-focus-blur $input-btn-focus-width $input-btn-focus-color !default;
@@ -763,11 +763,11 @@ $btn-font-size-lg:            $input-btn-font-size-lg !default;
 $btn-border-width:            $input-btn-border-width !default;
 
 $btn-font-weight:             $font-weight-normal !default;
-$btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
+$btn-box-shadow:              inset 2 4px 2 rgba($white, .8), 0 1px 1px rgba($black, .075) !default;
 $btn-focus-width:             $input-btn-focus-width !default;
 $btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
 $btn-disabled-opacity:        .65 !default;
-$btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125) !default;
+$btn-active-box-shadow:       inset 6 6px 6px rgba($black, .325) !default;
 
 $btn-link-color:              var(--#{$prefix}link-color) !default;
 $btn-link-hover-color:        var(--#{$prefix}link-hover-color) !default;

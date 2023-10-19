@@ -10,8 +10,10 @@ const MealList = ({data}) => {
         <div className=" d-flex flex-wrap me-2">
             {meals.map(meal => (
                 <Link key={meal.id} to={meal.id.toString()}>
-                <Card style={{ width: '16rem' }} className="mealCard m-2">
-                    <Card.Img variant="top" src={meal.url} className="mealImg"/>
+                <Card style={{ width: '16rem' }} className="m-2">
+                    <div className="mealCard">
+                        <Card.Img variant="top" src={meal.url} className="mealImg"/>
+                    </div>
                     <Card.Body>
                     <Card.Title>{meal.name}</Card.Title>
                     <Card.Text>

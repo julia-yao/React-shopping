@@ -5,8 +5,8 @@ export default function FootLayout() {
     <div className='footLayout bg-info'>
 
       <div className="p-4">
-        <div className="">
-          <Link className="fs-4 text-dark" to="/">
+        <div className="text-secondary">
+          <Link className="fs-4 link-secondary" to="/">
             Sara's Lunch
           </Link>
           <p>用心為您準備每一份餐點，快速傳遞新鮮與美味。</p>

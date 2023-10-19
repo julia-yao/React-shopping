@@ -160,15 +160,21 @@ a,link {
 }
 
 /* meal */
-.mealImg{
+.mealCard{
+  width: 100%;
   height: 230px;
   overflow: hidden;
-  object-fit: cover;
 }
-
+.mealImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease-in-out;
+}
 .mealCard:hover .mealImg{
   transform: scale(1.1);
-  transition: 0.8s;
+  text-shadow: 0px 0px 10px rgba(6, 6, 6, 0.8);
+  
 }
 
 /* mealDetails */
@@ -233,21 +239,29 @@ a,link {
     background: rgb(104, 55, 2);
   }
 }
-.list-group-hover{
+/* products prolist*/
+.pro-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pro-list-class{
+  margin: 1rem;
   padding: 1rem;
   border-radius: 1rem;
-  background: $info;
   color: $light;
-  display: flex;
+  transition: 0.5s;
+  background: linear-gradient(90deg, var(--c1, $info), var(--c2, $primary) 40%, var(--c1, $info)) var(--x, 0)/ 200%;
+  text-shadow: 0px 0px 10px rgba(6, 6, 6, 0.8);
 }
-.list-group-hover:hover{
-  background: $light;
-  color: $info;
-  transition: all .3s ;
-  transform: translateY(-10px);
-  box-shadow: rgb(165, 60, 60);
-  border: 2px $primary solid;
+.pro-list-class:hover
+{ --x: 100%;
+  transform: translateY(-8px);
+  border: 2px $primary solid; 
 }
-.list-group-hover:active{
-  background: #000;
-}
+
+/*
+.pro-list-class::after{
+  color: red;
+} 
+*/

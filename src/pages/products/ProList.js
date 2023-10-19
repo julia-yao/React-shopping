@@ -1,23 +1,21 @@
-import { ListGroup } from "react-bootstrap"
-
 export default function ProList({data}) {
     
   return (
-    <div className="ProList">
+    <div className="pro-list">
         <div>
-            <div className="list-group-hover" onClick={() => data("")}>
+            <div className="pro-list-class" onClick={() => data("")}>
                 ALL FOODS<br/>所有商品
             </div>
-            <div className="list-group-hover" onClick={() => data("breakfasts")}>
+            <div className="pro-list-class" onClick={() => data("breakfasts")}>
                 BREAKFAST＆SALAD<br/>早午餐沙拉
             </div>
-            <div className="list-group-hover" onClick={() => data("frenchtoast&cake")}>
+            <div className="pro-list-class changecolor-1" onClick={() => data("frenchtoast&cake")}>
                 FRENCH TOAST＆CAKE<br/>法式吐司蛋糕
             </div>
-            <div className="list-group-hover" onClick={() => data("coffee&tea")}>
+            <div className="pro-list-class changecolor-2" onClick={() => data("coffee&tea")}>
                 COFFEE＆TEA<br/>咖啡茶飲
             </div>
-            <div className="list-group-hover" onClick={() => data("juice")}>
+            <div className="pro-list-class" onClick={() => data("juice")}>
                 JUICE＆SODA<br/>果汁氣泡 
             </div>
         </div>

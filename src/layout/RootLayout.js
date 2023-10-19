@@ -54,7 +54,7 @@ return (
       </Navbar> 
     </header>
 
-    <main style={{marginTop:"74px",minHeight:"600px"}} className="bg-light">
+    <main style={{marginTop:"74px",minHeight:"500px"}} className="bg-light">
       <Outlet />
     </main>
 

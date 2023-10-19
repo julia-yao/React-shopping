@@ -2,7 +2,6 @@ import { useLoaderData, useParams } from "react-router-dom"
 import { Row, Col, Image, Button } from 'react-bootstrap'
 import swal from 'sweetalert';
 
-
 export default function MealDetails() {
   const {id} = useParams()
   const meal = useLoaderData()
