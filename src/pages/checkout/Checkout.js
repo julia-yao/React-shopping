@@ -36,7 +36,7 @@ export default function Checkout() {
     
     
   return (
-    <div className="checkout">
+    <div className="checkout py-3">
         <Container>
             <h2>
                 <i className="bi bi-bag-check-fill mx-2"></i>

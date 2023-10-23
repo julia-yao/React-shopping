@@ -8,7 +8,7 @@ function RootLayout() {
   const [ color, setColor ] = useState('navFixed');
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    setLoading(true);
+    setLoading(true)
     setTimeout(() => {
       setLoading(false);
     }, 500);
@@ -31,6 +31,10 @@ return (
   <>
   {loading ? (
   <div className="loader-container">
+    <div className="logo mb-3">
+      <img src="https://www.svgrepo.com/show/484441/ring.svg" style={{width: '100px'}} className="mb-2"/>
+      <h1 className="text-primary">Sara's Lunch</h1>
+    </div>
     <div className="throbber-loader"></div>
   </div>
   ):(
@@ -54,7 +58,7 @@ return (
       </Navbar> 
     </header>
 
-    <main style={{marginTop:"74px",minHeight:"500px"}} className="bg-light">
+    <main style={{marginTop: "74px",minHeight: "500px",}} className="bg-light">
       <Outlet />
     </main>
 

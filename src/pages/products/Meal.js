@@ -14,7 +14,7 @@ export default function Meal() {
 
   if (cate!==""){
     filterData = Filterfun(meals,(x)=> x.category === cate)
-    
+
   }
   else{
      filterData = meals

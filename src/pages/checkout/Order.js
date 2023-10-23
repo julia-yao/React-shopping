@@ -47,7 +47,7 @@ async function checkoutLoader(setData,setInfo){
   }  
 
   return (
-    <div className='Order'>
+    <div className='Order py-3'>
       <Container>
           <h2>
               <i className="bi bi-bag-check-fill mx-2"></i>

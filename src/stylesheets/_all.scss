@@ -56,7 +56,7 @@ a,link {
   font-family: "BernhardScriptW01-Light";
   font-style: normal;
 }
-
+/* cafelocation */
 .cafelocation{
   display: flex;
   justify-content: center;
@@ -71,6 +71,7 @@ a,link {
   font-family: 'Lato', sans-serif;
   font-weight: 900;
 }
+
 .cafeline{
   display: flex;
   align-items: center;
@@ -118,7 +119,6 @@ a,link {
 .maskCard:hover .mask{
   opacity: 0;
 }
-
 .maskCard .txt{
   position: absolute;
   top: 0;
@@ -174,7 +174,6 @@ a,link {
 .mealCard:hover .mealImg{
   transform: scale(1.1);
   text-shadow: 0px 0px 10px rgba(6, 6, 6, 0.8);
-  
 }
 
 /* mealDetails */
@@ -189,6 +188,7 @@ a,link {
   align-items: center;
   justify-content: center;
 }
+
 /* loader */
 .loader-container{
   width: 100%;
@@ -198,7 +198,15 @@ a,link {
   justify-content: center;
   align-items: center;
   position: fixed;
-  background: rgb(252, 198, 132);
+  background: rgb(250, 203, 145);
+}
+.loader-container .logo{
+  font-family: 'BernhardScriptW01-Light';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 2px rgb(123, 123, 123);
 }
 .throbber-loader{
   animation: throbber-loader 2000ms 300ms infinite ease-out;
@@ -210,7 +218,6 @@ a,link {
   height: 1.5em;
   margin: 0 1.6em;
 }
-
 .throbber-loader:not(:required):before, .throbber-loader:not(:required):after {
   background: rgb(104, 55, 2);
   content: '\x200B';
@@ -239,6 +246,7 @@ a,link {
     background: rgb(104, 55, 2);
   }
 }
+
 /* products prolist*/
 .pro-list{
   display: flex;
@@ -246,7 +254,7 @@ a,link {
   justify-content: center;
 }
 .pro-list-class{
-  margin: 1rem;
+  margin: .5rem;
   padding: 1rem;
   border-radius: 1rem;
   color: $light;
@@ -256,12 +264,6 @@ a,link {
 }
 .pro-list-class:hover
 { --x: 100%;
-  transform: translateY(-8px);
-  border: 2px $primary solid; 
+  transform: translateY(-6px);
+  border: 1px $primary solid; 
 }
-
-/*
-.pro-list-class::after{
-  color: red;
-} 
-*/

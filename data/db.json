@@ -146,20 +146,20 @@
     },
     {
       "id": 17,
-      "name": "檸檬海鹽蘇打",
-      "category": "juice",
-      "price": 200,
-      "url": "https://www.doutor.co.jp/product/file/20200618185939.jpg",
-      "info": "使用夏日檸檬和蜂蜜，配上海鹽的層次味覺。",
-      "danger": ""
-    },
-    {
-      "id": 18,
       "name": "錫蘭紅茶",
       "category": "coffee&tea",
       "price": 150,
       "url": "https://www.doutor.co.jp/product/file/20111201203140.jpg",
       "info": "選用超熟炒製錫蘭紅茶葉，兩次沖泡飲出茶香。",
+      "danger": ""
+    },
+    {
+      "id": 18,
+      "name": "檸檬海鹽蘇打",
+      "category": "juice",
+      "price": 200,
+      "url": "https://www.doutor.co.jp/product/file/20200618185939.jpg",
+      "info": "使用夏日檸檬和蜂蜜，配上海鹽的層次味覺。",
       "danger": ""
     },
     {
@@ -183,12 +183,8 @@
   ],
   "carts": [
     {
-      "id": 2,
-      "quantity": 1
-    },
-    {
       "id": 14,
-      "quantity": 2
+      "quantity": 1
     },
     {
       "id": 13,
@@ -196,13 +192,6 @@
     }
   ],
   "checkout": [
-    {
-      "name": "mario",
-      "tel": "032-2277890",
-      "address": "蘑菇村瑪麗區19號",
-      "note": "準時",
-      "pay": "信用卡",
-      "id": 1
-    }
+    
   ]
 }

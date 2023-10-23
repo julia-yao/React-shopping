@@ -8,13 +8,13 @@ export const MajorProductBgImg ={
     }
 export default function MajorProduct() {
   return (
-    <div className="container my-md-5 my-3 p-3" style={MajorProductBgImg}>
-        <Row className="flex-md-row flex-column justify-content-center align-items-center">
+    <div className="container my-md-5 my-3" style={MajorProductBgImg}>
+        <Row className="flex-md-row flex-column justify-content-center align-items-center p-3">
             <Col xs  md={4} lg={3} className="mt-md-3">
                 <Image src="https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" style={{hidth:"300px"}} className='img-fluid rounded-pill border border-light shadow'/>
             </Col>
-            <Col xs  md={8} lg={5} className="mt-3">
-                <div className='p-3'>
+            <Col xs  md={8} lg={5} className="m-3">
+                <div className='ps-3'>
                     <span className="text-light mb-3">
                         FRESH PRODUCTS
                     </span>
@@ -26,8 +26,8 @@ export default function MajorProduct() {
             </Col>
             
         </Row>
-        <Row className="flex-md-row flex-column-reverse justify-content-center align-items-center">
-            <Col xs  md={8} lg={5} className="mt-3">
+        <Row className="flex-md-row flex-column-reverse justify-content-center align-items-center p-3">
+            <Col xs  md={8} lg={5} className="m-3">
                 <div className='p-lg-0 p-3'>
                     <span className="text-light mb-3">
                         FEATURED PRODUCTS

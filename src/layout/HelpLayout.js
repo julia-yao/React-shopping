@@ -5,7 +5,7 @@ import { Container,Row,Col, Button } from 'react-bootstrap';
 export default function HelpLayout() {
   return (
     
-    <Container className="my-3 mx-auto">
+    <Container className="pt-3">
       <Row>
         <Col>
             <Row>
@@ -52,7 +52,6 @@ export default function HelpLayout() {
               <NavLink to="faq"><Button variant="success" className="m-2">View the FAQ</Button></NavLink>
               <NavLink to="contact"><Button variant="success" className="m-2">Contact Us</Button></NavLink>
             </nav>
-
             <Outlet />
         </Col>
       </Row>

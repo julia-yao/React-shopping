@@ -72,10 +72,13 @@ const CartList = () => {
   const RemoveSubTotalItem=(id)=>setSubTotals(subTotals.filter(x=>x.id!==id));
   
   if( data == null || Object.keys(data).length === 0)
-      return (<div className="col fw-bold m-5">購物車內空空喔</div>);
+    return (<div className="col fw-bold py-5 d-flex flex-column justify-content-center align-items-center">
+                <h2>購物車空空喔</h2>
+                <p>歡迎到商品區選購！</p>
+            </div>);
   
   return (
-    <div className="CartList p-1">
+    <div className="CartList py-3">
       { error && <div> {error} </div>}
       { isPending && <div> Loading...</div>}
       { data && <Cart data={data} handleDelete={handleDelete} setSub={UpdateSubTotals} />}

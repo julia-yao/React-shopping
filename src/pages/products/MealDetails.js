@@ -1,15 +1,16 @@
 import { useLoaderData, useParams } from "react-router-dom"
 import { Row, Col, Image, Button } from 'react-bootstrap'
 import swal from 'sweetalert';
+import { API_CARTS_GET_DATA } from "../../constants";
 
 export default function MealDetails() {
   const {id} = useParams()
   const meal = useLoaderData()
-  
+
   const handleAddCart = async (e)=>{
     let res=null;
     let metd = 'POST';
-    let url = 'http://localhost:8000/carts/';
+    let url = API_CARTS_GET_DATA;
     let pUrl = url+meal.id;
     let json = {id:meal.id, quantity:1}
     //check if the meal is in cart
