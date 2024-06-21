@@ -2,7 +2,7 @@ import CheckItem from "./CheckItem";
 import { Container, Row, Col,Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import { API_MEAL_GET_DATA, API_CARTS_GET_DATA } from '../../constants'
+import { API_MEAL_GET_DATA, API_CARTS_GET_DATA,API_CHECKOUT_GET_DATA } from '../../constants'
 import OrderInfo from "./OrderInfo";
 import swal from 'sweetalert';
 
@@ -10,12 +10,13 @@ async function checkoutLoader(setData,setInfo){
   let data =[];
   const res1 = await fetch(API_MEAL_GET_DATA);
   const res2 = await fetch(API_CARTS_GET_DATA);
-  const res3 = await fetch ('http://localhost:8000/checkout')
+  const res3 = await fetch (API_CHECKOUT_GET_DATA);
   
   let meals = await res1.json();
   let carts = await res2.json();
   let checkout = await res3.json();
   setInfo(checkout);
+  
 
   if(carts.length!==0){
       for(let i=0;i<carts.length;i++){
@@ -40,10 +41,10 @@ async function checkoutLoader(setData,setInfo){
   ,[]);
 
   const handleClick = (e)=>{
-    swal("送出訂單成功!", "您的訂單已送出，三日內將出貨！", "success");  
+    swal("送出訂單成功!", "您的訂單已送出，將於指定日期出貨！", "success");  
     setTimeout(() => {
         navigate('/');
-      }, "2000");
+      }, "1000");
   }  
 
   return (

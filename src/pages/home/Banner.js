@@ -16,12 +16,12 @@ export default function Banner() {
             </div>
         </div>
       </div>
-      <div className="container my-lg-5 m-3 p-md-3 p-0">
-        <Row className="justify-content-center">
-          <Col md={5} className="cafelocation">
+      <div className="container my-lg-5 p-md-3">
+        <Row className="p-2">
+          <Col md={5} className="cafelocation col-md-6">
             <div className="m-5">
                 <div className="p-3">
-                  <h1 className='cafetitle fs-s text-info'>Sara's Lunch</h1>
+                  <h1 className='cafetitle ms-3 ms-md-0 fs-s text-info'>Sara's Lunch</h1>
                   <div className="my-5">
                     <span className="">
                       在2019年由兩位喜愛食物的女性創立，結合了新鮮豐富的作物和細緻烘焙的咖啡，
@@ -40,12 +40,12 @@ export default function Banner() {
                 </div>
             </div>
           </Col>
-          <Col md={3} className="">
+          <Col xs={6} md={3} className="">
             <div className="">
               <Image src="https://sarabethsrestaurants.jp/_img/page/location/lumine02.jpg" className="cafeImg shadow" alt=""/>
             </div>
           </Col>
-          <Col md={3} className="">
+          <Col xs={6} md={3} className="">
             <div className="">
               <Image src="https://sarabethsrestaurants.jp/_img/page/location/nagoya02.jpg" className="cafeImg shadow" alt=""/>
             </div>

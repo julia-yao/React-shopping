@@ -1,7 +1,7 @@
 import { Container, Row, Col,Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { API_MEAL_GET_DATA, API_CARTS_GET_DATA } from '../../constants'
-import CheckInfo from './CheckInfo';
+import CheckInfo from './Checkinfo';
 import CheckItem from './CheckItem';
 import { Link } from 'react-router-dom';
 
@@ -49,13 +49,13 @@ export default function Checkout() {
                 </Col>
                 
                 <Col className='col-lg-5 border p-3 bg-light'>
-                    <CheckInfo isPending={setIsPending}/>
+                    <CheckInfo setIsPending={setIsPending}/>
                 </Col>
             </Row>    
             <hr className='m-2'/>
             <div className="d-flex justify-content-end m-3">
                 <Link to="/cart" className="btn btn-outline-success mx-2"><i className="bi bi-caret-left-fill me-1"></i>修改購物車</Link>
-                {!isPending && <Link to="/order"><Button type="submit" className="btn btn-warning">送出訂單<i className="bi bi-caret-right-fill ms-1"></i></Button></Link>}
+                {!isPending && <Button form="form1" type="submit" className="btn btn-warning">送出訂單<i className="bi bi-caret-right-fill ms-1"></i></Button>}
                 {isPending && <Button disabled type="submit">正在送出資料...</Button>}
             </div>
         </Container>

@@ -1,6 +1,7 @@
 import {Table} from 'react-bootstrap';
 
 export default function OrderInfo({info}) {
+  
 
   return (
     <div className="OrderInfo">
