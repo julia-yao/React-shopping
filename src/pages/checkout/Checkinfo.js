@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
-export default function Checkinfo(setIsPending) {
-
+export default function Checkinfo({setIsPending}) {
+    const nav=useNavigate();
     const [ name, setName ] = useState("");
     function nameChange(e){
         setName(e.target.value)
@@ -27,14 +27,12 @@ export default function Checkinfo(setIsPending) {
     function payChange(e){
         setPay(e.target.value)
     }
-
-    
+    const start = Date.now();
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        const checkout = { name,tel,address,pay,note };
-
-        setIsPending('true');
+        const checkout = { name,tel,address,pay,note,start };
+        setIsPending(true);
 
         fetch('http://localhost:8000/checkout', {
             method:'POST',
@@ -42,16 +40,17 @@ export default function Checkinfo(setIsPending) {
             body: JSON.stringify(checkout)
         }).then(() =>{
             console.log("send checkout")
-            setIsPending(false)
+            setIsPending(false);
+            nav("/order");
         })
     }   
     
 
-
+//                <Button type="submit" className="btn btn-warning">送出訂單<i className="bi bi-caret-right-fill ms-1"></i></Button>
   return (
     <div className="Checkinfo mx-auto">
         <h5>訂單資訊</h5>
-       <Form onSubmit={handleSubmit}>
+       <Form onSubmit={handleSubmit} id="form1">
             <Form.Group className="mb-2" controlId="exampleForm.ControlInput1">
                 <Form.Label>姓名</Form.Label>
                 <Form.Control type="name" placeholder="請輸入姓名" name="姓名" value={name} onChange={nameChange}/>
@@ -72,6 +71,7 @@ export default function Checkinfo(setIsPending) {
                 <Form.Label>留言</Form.Label>
                 <Form.Control as="textarea" rows={1} cols={1} name="message" value={note} onChange={noteChange}/>
             </Form.Group>
+
         </Form>
     </div>
 
