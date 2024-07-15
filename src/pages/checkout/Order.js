@@ -2,33 +2,31 @@ import CheckItem from "./CheckItem";
 import { Container, Row, Col,Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import { API_MEAL_GET_DATA, API_CARTS_GET_DATA,API_CHECKOUT_GET_DATA } from '../../constants'
+import { API_CARTS_GET_DATA,API_CHECKOUT_GET_DATA } from '../../constants'
 import OrderInfo from "./OrderInfo";
 import swal from 'sweetalert';
 
 async function checkoutLoader(setData,setInfo){
-  let data =[];
-  const res1 = await fetch(API_MEAL_GET_DATA);
-  const res2 = await fetch(API_CARTS_GET_DATA);
-  const res3 = await fetch (API_CHECKOUT_GET_DATA);
+  let data=[]
+  let startNumber ='1718897837426';
+  const res1 = await fetch(API_CARTS_GET_DATA);
+  const res2 = await fetch (API_CHECKOUT_GET_DATA);
   
-  let meals = await res1.json();
-  let carts = await res2.json();
-  let checkout = await res3.json();
-  setInfo(checkout);
+  let carts = await res1.json();
+  let checkout = await res2.json();
+
+  
+ 
+    for(let i=0;i<checkout.length;i++){
+      if(checkout[i].start === startNumber){
+        data.push(checkout);
+      }
+    }
+  
   
 
-  if(carts.length!==0){
-      for(let i=0;i<carts.length;i++){
-          for(let j=0;j<meals.length;j++){
-              if(carts[i].id === meals[j].id){
-                  meals[j].quantity = carts[i].quantity
-                  data.push(meals[j])
-              }
-          }
-      }
-  } 
-  setData(data);
+  setInfo(data);
+  setData(carts);
 }
 
   export default function Order() {

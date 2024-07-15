@@ -1,29 +1,15 @@
 import { Container, Row, Col,Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
-import { API_MEAL_GET_DATA, API_CARTS_GET_DATA } from '../../constants'
+import { API_CARTS_GET_DATA } from '../../constants'
 import CheckInfo from './Checkinfo';
 import CheckItem from './CheckItem';
 import { Link } from 'react-router-dom';
 
 async function checkoutLoader(setData){
-    let data =[];
-    const res1 = await fetch(API_MEAL_GET_DATA);
-    const res2 = await fetch(API_CARTS_GET_DATA);
     
-    let meals = await res1.json();
-    let carts = await res2.json();
-
-    if(carts.length!==0){
-        for(let i=0;i<carts.length;i++){
-            for(let j=0;j<meals.length;j++){
-                if(carts[i].id === meals[j].id){
-                    meals[j].quantity = carts[i].quantity
-                    data.push(meals[j])
-                }
-            }
-        }
-    } 
-    setData(data);
+    const res = await fetch(API_CARTS_GET_DATA);
+    let carts = await res.json();
+    setData(carts);
 }
 
 export default function Checkout() {

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { API_CHECKOUT_GET_DATA } from '../../constants'
 
 export default function Checkinfo({setIsPending}) {
     const nav=useNavigate();
@@ -34,7 +35,7 @@ export default function Checkinfo({setIsPending}) {
         const checkout = { name,tel,address,pay,note,start };
         setIsPending(true);
 
-        fetch('http://localhost:8000/checkout', {
+        fetch(API_CHECKOUT_GET_DATA, {
             method:'POST',
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify(checkout)

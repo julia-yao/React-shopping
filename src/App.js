@@ -12,8 +12,8 @@ import Products from './pages/Products'
 import Faq from './pages/help/Faq'
 import Contact from './pages/help/Contact'
 import NotFound from './pages/NotFound'
-import Meal,{ mealLoader } from './pages/products/Meal'
-import MealDetails, { mealDetailsLoader } from './pages/products/MealDetails'
+import Meal from './pages/products/Meal'
+import MealDetails from './pages/products/MealDetails'
 import MealError from './pages/products/MealError'
 import CartList from './pages/cart/CartList'
 import Checkout from './pages/checkout/Checkout'
@@ -31,16 +31,14 @@ createBrowserRouter(
   createRoutesFromElements(
     <Route path="/"  element={<RootLayout />}>
       <Route index element={<Home />} />
-      <Route path='products' element={<Products />} errorElement={<MealError />}>
+      <Route path='/products' element={<Products />} errorElement={<MealError />}>
         <Route 
           index 
           element={<Meal />} 
-          loader={mealLoader}
         />
         <Route
           path=':id'
           element={<MealDetails />}
-          loader={mealDetailsLoader}
         />
       </Route>
 
