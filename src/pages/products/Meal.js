@@ -1,12 +1,12 @@
-import { useLoaderData, useOutletContext } from "react-router-dom"
+import { useOutletContext } from "react-router-dom"
 import { API_MEAL_GET_DATA } from '../../constants'
 import MealList from "./MealList";
+import useFetch from "../../components/useFetch";
 import Filterfun from "../../components/Filterfun";
-
 
 export default function Meal() {
 
-  const meals = useLoaderData();
+  const { data:meals } = useFetch( API_MEAL_GET_DATA );
   
   const cate = useOutletContext()[0];
   
@@ -29,14 +29,4 @@ export default function Meal() {
     </div>
     
   )
-}
-
-// data loader
-export const mealLoader = async () => {
-  const res = await fetch(API_MEAL_GET_DATA)
-
-  if(!res.ok)
-    throw Error ("無法取得整份菜單。")
-
-  return res.json()
 }

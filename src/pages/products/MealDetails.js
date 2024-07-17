@@ -1,18 +1,25 @@
-import { useLoaderData, useParams } from "react-router-dom"
 import { Row, Col, Image, Button } from 'react-bootstrap'
 import swal from 'sweetalert';
-import { API_CARTS_GET_DATA } from "../../constants";
+import { useLoaderData } from 'react-router-dom';
+import { API_CARTS_GET_DATA, API_MEAL_GET_DATA } from "../../constants";
+
 
 export default function MealDetails() {
-  const {id} = useParams()
-  const meal = useLoaderData()
+  
+  const meal = useLoaderData();
+  
 
   const handleAddCart = async (e)=>{
     let res=null;
     let metd = 'POST';
     let url = API_CARTS_GET_DATA;
     let pUrl = url+meal.id;
-    let json = {id:meal.id, quantity:1}
+    let json = {id:meal.id, 
+                quantity:1, 
+                name:meal.name,
+                price:meal.price,
+                url:meal.url
+              }
     //check if the meal is in cart
     await fetch(pUrl)
           .then(x=>{
@@ -20,7 +27,7 @@ export default function MealDetails() {
             return x.json();
           })
           .then(x=>res=x) 
-          
+       
     if(res!=null){
       console.log("already in cart");
       json.quantity = res.quantity +1;
@@ -42,44 +49,43 @@ export default function MealDetails() {
 
     return (
     <div className="MealDetails">
-      <Row className="flex-md-row flex-column justify-content-center align-content-center">
-        <Col xs md={5} className="m-3 m-md-0 d-flex justify-content-center">
-          <div className="" style={{ hidth:'270px'}}>
-            <Image src={meal.url} className='img-fluid rounded shadow-sm mealDetailImg'/>
-          </div>
-        </Col>
-        <Col xs md={6} className="p-2 m-3 m-md-0 text-light">
-          <h2>{meal.name}</h2>
-          <p>售價為 NT. {meal.price} 元</p>
-          <div className="">
-            <Button variant="warning me-2" onClick={handleAddCart}>
-              加入購物車
-            </Button>
-            <Button variant="danger">
-              <i className="bi bi-suit-heart fs-6 fw-bolder"/>
-            </Button>
-          </div>  
-          <div className="details mt-3 border-top py-2">
-            <p>餐點介紹：{meal.info}</p>
-            <p style={{
-              visibility: meal.danger == "" && 'hidden',
-            }}>
-              本餐點內含：{meal.danger}，有過敏體質者請注意。
-            </p>
-          </div>
-        </Col>
-      </Row>
+        <Row className="flex-mds-row flex-column justify-content-center align-content-center">
+          <Col xs md={5} className="m-3 m-md-0 d-flex justify-content-center">
+            <div className="" style={{ hidth:'270px'}}>
+              <Image src={meal.url} className='img-fluid rounded shadow-sm mealDetailImg'/>
+            </div>
+          </Col>
+          <Col xs md={6} className="p-2 m-3 m-md-0 text-light">
+            <h2>{meal.name}</h2>
+            <p>售價為 NT. {meal.price} 元</p>
+            <div className="">
+              <Button variant="warning me-2" onClick={handleAddCart}>
+                加入購物車
+              </Button>
+              <Button variant="danger">
+                <i className="bi bi-suit-heart fs-6 fw-bolder"/>
+              </Button>
+            </div>  
+            <div className="details mt-3 border-top py-2">
+              <p>餐點介紹：{meal.info}</p>
+              <p style={{
+                visibility: meal.danger = "" && 'hidden',
+              }}>
+                本餐點內含：{meal.danger}，有過敏體質者請注意。
+              </p>
+            </div>
+          </Col>
+        </Row>
     </div>
     )
 }
-
 export const mealDetailsLoader = async ({ params }) => {
-    const { id } = params
-  
-    const res = await fetch('http://localhost:8000/meals/' + id)
+  const { id } = params
+    
+  const res = await fetch( API_MEAL_GET_DATA + id)
 
-    if(!res.ok){
-      throw Error ("無法找到您輸入的餐點。")
-    }
-    return res.json()
+  if(!res.ok){
+        throw Error ("無法找到您輸入的餐點。")
   }
+  return res.json()
+}

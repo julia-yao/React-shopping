@@ -179,6 +179,13 @@
       "mail": "test@gmail.com",
       "note": "With our sponsor Mockend and a simple GitHub repo, you can have your own fake online REST server in seconds.",
       "id": 30
+    },
+    {
+      "name": "",
+      "tel": "",
+      "mail": "",
+      "note": "",
+      "id": 31
     }
   ],
   "carts": [
@@ -188,20 +195,6 @@
       "name": "美式咖啡",
       "price": 150,
       "url": "https://www.doutor.co.jp/product/file/20120509141245.jpg"
-    },
-    {
-      "id": 2,
-      "quantity": 1,
-      "name": "煙燻鮭魚早午餐",
-      "price": 500,
-      "url": "https://sarabethsrestaurants.jp/_img/page/menu/09.jpg"
-    },
-    {
-      "id": 19,
-      "quantity": 1,
-      "name": "鮮榨柳橙汁",
-      "price": 150,
-      "url": "https://www.doutor.co.jp/product/file/20210706182407.jpg"
     }
   ],
   "checkout": [

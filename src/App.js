@@ -13,7 +13,7 @@ import Faq from './pages/help/Faq'
 import Contact from './pages/help/Contact'
 import NotFound from './pages/NotFound'
 import Meal from './pages/products/Meal'
-import MealDetails from './pages/products/MealDetails'
+import MealDetails,{ mealDetailsLoader } from './pages/products/MealDetails'
 import MealError from './pages/products/MealError'
 import CartList from './pages/cart/CartList'
 import Checkout from './pages/checkout/Checkout'
@@ -39,6 +39,7 @@ createBrowserRouter(
         <Route
           path=':id'
           element={<MealDetails />}
+          loader={mealDetailsLoader}
         />
       </Route>
 

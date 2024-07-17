@@ -6,6 +6,7 @@ import { MajorProductBgImg } from './home/MajorProduct';
 
 export default function Products() {
   
+  
   const [ category,setCategory ]= useState("")
 
 
