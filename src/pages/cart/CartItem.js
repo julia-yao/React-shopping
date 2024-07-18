@@ -1,6 +1,5 @@
 import { Image, Button } from 'react-bootstrap';
-import {API_MEAL_GET_DATA} from '../../constants';
-import {API_CARTS_GET_DATA} from '../../constants';
+import { API_CARTS_GET_DATA } from '../../constants';
 import { useEffect, useState } from "react";
 
 
@@ -9,10 +8,11 @@ const CartItem = ({ data, handleDelete,setSub}) => {
     const [ quantity, setQuantity ] = useState(data.quantity)
     
     useEffect(() => {
-        fetch( API_MEAL_GET_DATA + data.id)
+        fetch( API_CARTS_GET_DATA + data.id)
         .then(x => x.json())
         .then(x => {setMeal(x); setSub(data.id,x.price*quantity);})
     },[]);
+
 
     const UpdateQuantity = (num) => {
         if(num<1)//escape when num == 0
@@ -41,9 +41,9 @@ const CartItem = ({ data, handleDelete,setSub}) => {
             <td>{meal.name}</td>
             <td>
                 <div className='d-flex justify-content-center flex-column flex-md-row align-items-center'>
-                    <Button className='mx-2 btn-sm' onClick={()=>UpdateQuantity(quantity-1)}>-</Button>
+                    {quantity < 10 && (<Button className='mx-2 btn-sm' onClick={()=>UpdateQuantity(quantity-1)}>-</Button>)}
                         {quantity} {/*1*/}
-                    <Button className='mx-2 btn-sm' onClick={()=>UpdateQuantity(quantity+1)}>+</Button>
+                    {quantity >0 && (<Button className='mx-2 btn-sm' onClick={()=>UpdateQuantity(quantity+1)}>+</Button>)}
                 </div>
                 
             </td>

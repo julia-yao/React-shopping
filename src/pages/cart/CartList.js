@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import Cart from "./Cart";
 import CartTotal from "./CartTotal";
 import swal from 'sweetalert';
+import { API_CARTS_GET_DATA } from "../../constants";
+
 
 
 let internalSubs = [];
@@ -29,6 +31,10 @@ const CartList = () => {
       setError(err.message);
     })
   },[]);
+
+  /*const { data, isPending, error } = useFetch( API_CARTS_GET_DATA );
+  
+  const [ subTotals, setSubTotals ] = useState(internalSubs); */
   
   const handleDelete = (id) => {
     swal({
@@ -40,11 +46,11 @@ const CartList = () => {
     })
     .then((willDelete) => {
       if (willDelete) {
-        fetch('http://localhost:8000/carts/' + id, {
+        fetch( API_CARTS_GET_DATA + id, {
           method:'DELETE'
         })
         .then(() =>{
-          fetch('http://localhost:8000/carts/')
+          fetch( API_CARTS_GET_DATA )
           .then(x => x.json())
           .then(x => {setData(x); RemoveSubTotalItem(id);})
         }).then(() =>{
@@ -57,7 +63,7 @@ const CartList = () => {
       }
     });
   }
-  {/* data.id  price*quantity */}
+  /* data.id  price*quantity */
   const UpdateSubTotals = (id,st)=>{
     for(let i=0;i<subTotals.length;i++)
       if(subTotals[i].id===id){
@@ -69,7 +75,7 @@ const CartList = () => {
     setSubTotals([...subTotals]);
   };
 
-  const RemoveSubTotalItem=(id)=>setSubTotals(subTotals.filter(x=>x.id!==id));
+  const RemoveSubTotalItem = (id)=>setSubTotals(subTotals.filter(x=>x.id!==id));
   
   if( data == null || Object.keys(data).length === 0)
     return (<div className="col fw-bold py-5 d-flex flex-column justify-content-center align-items-center">
@@ -83,7 +89,6 @@ const CartList = () => {
       { isPending && <div> Loading...</div>}
       { data && <Cart data={data} handleDelete={handleDelete} setSub={UpdateSubTotals} />}
       { subTotals && <CartTotal data={subTotals} setSub={UpdateSubTotals}/>}
-      
     </div>
   );
 }

@@ -43,6 +43,7 @@ export default function Checkinfo({setIsPending}) {
             console.log("send checkout")
             setIsPending(false);
             nav("/order");
+            
         })
     }   
     
