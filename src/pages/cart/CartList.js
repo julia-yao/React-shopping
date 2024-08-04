@@ -15,7 +15,7 @@ const CartList = () => {
   const [ subTotals, setSubTotals ] = useState(internalSubs)
     
   useEffect(() => {
-    fetch('http://localhost:8000/carts')
+    fetch(API_CARTS_GET_DATA)
     .then(res => {
       if(!res.ok)
         throw Error('頁面無法獲取資料');
@@ -32,10 +32,6 @@ const CartList = () => {
     })
   },[]);
 
-  /*const { data, isPending, error } = useFetch( API_CARTS_GET_DATA );
-  
-  const [ subTotals, setSubTotals ] = useState(internalSubs); */
-  
   const handleDelete = (id) => {
     swal({
       title: "確定刪除嗎？",
