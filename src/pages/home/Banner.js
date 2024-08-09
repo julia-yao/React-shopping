@@ -19,10 +19,10 @@ export default function Banner() {
       <div className="container my-lg-5 p-md-3">
         <Row className="p-2">
           <Col md={5} className="cafelocation col-md-6">
-            <div className="m-5">
+            <div className="m-3 m-md-5">
                 <div className="p-3">
-                  <h1 className='cafetitle ms-3 ms-md-0 fs-s text-info'>Sara's Lunch</h1>
-                  <div className="my-5">
+                  <h1 className='cafetitle fs-s text-info'>Sara's Lunch</h1>
+                  <div className="my-3 my-md-5">
                     <span className="">
                       在2019年由兩位喜愛食物的女性創立，結合了新鮮豐富的作物和細緻烘焙的咖啡，
                       我們相信簡單新鮮勝過香料的添加，把為家人準備的餐點放上餐桌，共享歡聚時刻！
@@ -34,7 +34,7 @@ export default function Banner() {
                     <span className="fw-bold fst-italic">#Coffee</span>
                   </div>
                 </div>
-                <div className="cafeline">
+                <div className="cafeline d-none d-md-flex">
                   <hr className='border border-primary'/>
                   <span className='text-primary align-self-center'>CURATED WITH A UNIQUE SENSE</span>
                 </div>
