@@ -32,7 +32,8 @@ export default function Order() {
   useEffect(() => {
     checkoutLoader(setData);
     setInfo(state.orderInfo);
-  }, []);
+  }, [state.orderInfo]);
+  
 
   const handleClick = () => {
     swal("送出訂單成功!", "您的訂單已送出，將於指定日期出貨！", "success");

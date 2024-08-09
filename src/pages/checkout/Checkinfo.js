@@ -27,16 +27,6 @@ export default function CheckInfo({ setIsPending }) {
         setIsPending(true);
 
         try {
-            /*
-            const response = await fetch(API_CHECKOUT_GET_DATA, {
-                method: 'POST',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(checkout)
-            });
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            */
             console.log("Checkout sent successfully");
             navigate("/order",{state:{orderInfo:checkout}});
         } catch (error) {
