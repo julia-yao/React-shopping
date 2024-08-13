@@ -8,32 +8,32 @@ export const MajorProductBgImg ={
     }
 export default function MajorProduct() {
   return (
-    <div className="MajorProduct container my-md-5 my-3" style={MajorProductBgImg}>
-        <Row className="flex-md-row flex-column justify-content-center align-items-center p-3">
+    <div className="MajorProduct container my-3" style={MajorProductBgImg}>
+        <Row className="justify-content-center align-items-center p-2 pt-md-3">
             <Col xs  md={4} lg={3} className="d-none d-md-block">
                 <Image src="https://images.pexels.com/photos/1400172/pexels-photo-1400172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" style={{hidth:"300px"}} className='img-fluid rounded-pill border border-light shadow'/>
             </Col>
-            <Col xs  md={8} lg={6} className="m-3">
-                <div className='ps-md-3'>
+            <Col xs  md={8} lg={6} className="">
+                <div className='p-md-3'>
                     <span className="text-light mb-3">
                         FRESH PRODUCTS
                     </span>
                     <p className="fw-bold text-light border-top py-2 fs-4">新鮮作物</p>
-                    <p className="text-light fs-5">
+                    <p className="text-light fs-md-5">
                         我們使用富含營養的蔬菜，主食生菜沙拉內含洋蔥、芝麻葉美生菜配上堅果，創造爽脆口感，醬汁使用自製的大蒜橄欖油醋，自製舒芙蕾用紐西蘭奶油與農場雞蛋，維持外部焦香上色內部軟嫩口感，配上經典主食，一起用活力的食物開始一天。
                     </p>
                 </div>
             </Col>
             
         </Row>
-        <Row className="flex-md-row flex-column-reverse justify-content-center align-items-center p-3">
-            <Col xs  md={8} lg={6} className="m-3">
-                <div className='ps-md-3'>
+        <Row className="justify-content-center align-items-center p-2 pb-md-3">
+            <Col xs  md={8} lg={6} className="">
+                <div className='p-md-3'>
                     <span className="text-light mb-3">
                         FEATURED PRODUCTS
                     </span>
                     <p className="fw-bold text-light border-top py-2 fs-4">特製拿鐵</p> 
-                    <p className="text-light fs-5">
+                    <p className="text-light fs-md-5">
                         季節特選藝伎咖啡豆，配上細緻打發的奶泡，衝出濃醇口感。季節特選藝伎咖啡豆，配上細緻打發的奶泡，衝出濃醇口感。
                     </p>
                 </div>

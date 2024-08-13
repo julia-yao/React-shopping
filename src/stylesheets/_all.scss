@@ -73,14 +73,18 @@ a,link {
 @media (min-width: 768px) {
   .cafetitle{
     position: absolute;
-    top: 36px;
-    right: -40px;
+    top: 3rem;
+    right: -3rem;
   }
   .cafeImg{
-    height: 500px;
+    min-height: 500px;
   }
-  .maskCard img{
-    height: 300px;
+  .maskCard{
+    min-height: 240px;
+    object-fit: cover;
+  }
+  .font-family{
+    font-size: 1.5rem;
   }
 }
 .cafeline{
@@ -89,35 +93,32 @@ a,link {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 8px;
+  padding: 1rem;
   writing-mode: vertical-rl;
 }
 .cafeline hr{
   height: 100px;
 }
 .cafeImg{
-  height: 200px;
   width: 100%;
+  height: 160px;
   object-fit: cover;
   object-position: center center;
 }
 
 /* productMask */
-.productMask{
-  width: 100%;
-  display: flex;
-}
-.maskCard{
-  overflow: hidden;
+.maskCard {
   position: relative;
-  height: 120px;
-}
-.maskCard img{
-  vertical-align: middle;
   width: 100%;
-  //height: 120px;
+  height: 160px;
+}
+.maskCard img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
+
 .maskCard .mask{
   position: absolute;
   top: 0;
