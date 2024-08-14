@@ -2,11 +2,13 @@ import { Row, Col, Image, Button } from 'react-bootstrap'
 import swal from 'sweetalert';
 import { useLoaderData } from 'react-router-dom';
 import { API_CARTS_GET_DATA, API_MEAL_GET_DATA } from "../../constants";
+import { useState } from "react";
 
 
 export default function MealDetails() {
   
   const meal = useLoaderData();
+  const [liked, setLiked] = useState(false);
   
 
   const handleAddCart = async (e)=>{
@@ -47,9 +49,15 @@ export default function MealDetails() {
     })
   }
 
+    const handleLike = () => {
+      setLiked(!liked); // Toggle liked state
+      swal("成功!", "已加入心願清單", "success");
+  }
+  
+
     return (
     <div className="MealDetails">
-        <Row className="flex-mds-row flex-column justify-content-center align-content-center">
+        <Row className="flex-mds-row flex-column justify-content-center align-content-center m-3">
           <Col xs md={5} className="m-3 m-md-0 d-flex justify-content-center">
             <div className="" style={{ hidth:'270px'}}>
               <Image src={meal.url} className='img-fluid rounded shadow-sm mealDetailImg'/>
@@ -62,15 +70,13 @@ export default function MealDetails() {
               <Button variant="warning me-2" onClick={handleAddCart}>
                 加入購物車
               </Button>
-              <Button variant="danger">
-                <i className="bi bi-suit-heart fs-6 fw-bolder"/>
+              <Button variant="danger" onClick={handleLike}>
+                <i className={`bi ${liked ? 'bi-suit-heart-fill' : 'bi-suit-heart'} fs-6 fw-bolder`}></i>
               </Button>
             </div>  
             <div className="details mt-3 border-top py-2">
               <p>餐點介紹：{meal.info}</p>
-              <p style={{
-                visibility: meal.danger = "" && 'hidden',
-              }}>
+              <p style={{ visibility: meal.danger ? 'visible' : 'hidden' }}>
                 本餐點內含：{meal.danger}，有過敏體質者請注意。
               </p>
             </div>

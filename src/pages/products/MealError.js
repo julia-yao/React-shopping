@@ -5,7 +5,7 @@ export default function MealError() {
 
   return (
     <div className="MealError d-flex justify-content-center py-5">
-      <div>
+      <div className="my-5">
         <h2>發生錯誤</h2>
         <p>{error.message}</p>
         <p>回首頁<Link to="/">Sara's Lunch</Link>...</p>

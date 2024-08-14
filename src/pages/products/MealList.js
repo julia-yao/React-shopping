@@ -1,3 +1,4 @@
+import { Row,Col } from 'react-bootstrap';
 import { Link } from "react-router-dom"
 import Card from 'react-bootstrap/Card';
 
@@ -6,24 +7,25 @@ const MealList = ({data}) => {
    
   return (
     <div className="mealList">
-        
-        <div className=" d-flex flex-wrap me-2">
-            {meals.map(meal => (
-                <Link key={meal.id} to={meal.id.toString()}>
-                <Card style={{ width: '16rem' }} className="m-2">
-                    <div className="mealCard">
-                        <Card.Img variant="top" src={meal.url} className="mealImg"/>
-                    </div>
-                    <Card.Body>
-                    <Card.Title>{meal.name}</Card.Title>
-                    <Card.Text>
-                        售價為 NT. {meal.price} 元
-                    </Card.Text>
-                    </Card.Body>
-                </Card>
-                </Link>
+        <Row className="">
+            {meals.map((meal,index) => (
+                <Col xs={6} lg={4} className='g-0'>
+                    <Link key={index} to={meal.id.toString()}>
+                    <Card className="m-2">
+                        <div className="mealCard">
+                            <Card.Img variant="top" src={meal.url} className="mealImg"/>
+                        </div>
+                        <Card.Body>
+                        <Card.Title>{meal.name}</Card.Title>
+                        <Card.Text>
+                            售價為 NT. {meal.price} 元
+                        </Card.Text>
+                        </Card.Body>
+                    </Card>
+                    </Link>
+                </Col>
             ))}
-        </div>
+        </Row>
     </div>
   )
 }
