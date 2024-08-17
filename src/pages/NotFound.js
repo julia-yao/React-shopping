@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 
 export default function NotFound() {
   return (
-    <Container className="NotFound d-flex justify-content-center">
+    <Container className="NotFound d-flex justify-content-center py-5">
         <div className="py-5">
             <h2>Sorry</h2>
             <p>您造訪的頁面不存在。</p>

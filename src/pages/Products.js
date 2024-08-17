@@ -12,9 +12,9 @@ export default function Products() {
 
   return (
     <div className='Products p-3 mx-auto' style={MajorProductBgImg}>
-      <Row className='flex-md-row flex-column d-flex justify-content-center'>
-        <Col xs md={4} lg={3}>{<ProList data={setCategory}/>}</Col>
-        <Col xs md={7} lg={9}>{<Outlet context={[category,setCategory]}/>} </Col>
+      <Row className='flex-md-row flex-column'>
+        <Col xs={12} md={4} lg={3}>{<ProList data={setCategory}/>}</Col>
+        <Col xs={12} md={7} lg={9}>{<Outlet context={[category,setCategory]}/>} </Col>
       </Row>
       
     </div>

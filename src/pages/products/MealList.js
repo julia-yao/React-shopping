@@ -8,9 +8,9 @@ const MealList = ({data}) => {
   return (
     <div className="mealList">
         <Row className="">
-            {meals.map((meal,index) => (
+            {meals.map(meal => (
                 <Col xs={6} lg={4} className='g-0'>
-                    <Link key={index} to={meal.id.toString()}>
+                    <Link key={meal.id} to={meal.id.toString()}>
                     <Card className="m-2">
                         <div className="mealCard">
                             <Card.Img variant="top" src={meal.url} className="mealImg"/>

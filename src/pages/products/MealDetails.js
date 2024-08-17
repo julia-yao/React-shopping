@@ -59,7 +59,7 @@ export default function MealDetails() {
     <div className="MealDetails">
         <Row className="flex-mds-row flex-column justify-content-center align-content-center m-3">
           <Col xs md={5} className="m-3 m-md-0 d-flex justify-content-center">
-            <div className="" style={{ hidth:'270px'}}>
+            <div className="">
               <Image src={meal.url} className='img-fluid rounded shadow-sm mealDetailImg'/>
             </div>
           </Col>

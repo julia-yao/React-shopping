@@ -4,6 +4,8 @@ import MealList from "./MealList";
 import useFetch from "../../components/useFetch";
 import Filterfun from "../../components/Filterfun";
 
+
+
 export default function Meal() {
 
   const { data:meals } = useFetch( API_MEAL_GET_DATA );
@@ -13,7 +15,7 @@ export default function Meal() {
   let filterData =[]
 
   if (cate!==""){
-    filterData = Filterfun(meals,(x)=> x.category === cate)
+    filterData = Filterfun(meals,(x)=> x.category === cate) 
 
   }
   else{

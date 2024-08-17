@@ -23,7 +23,7 @@ export default function CheckInfo({ setIsPending }) {
         
         // Debugging: Check the values of checkout
         console.log("Form Data on Submit:", checkout);
-
+        
         setIsPending(true);
 
         try {
@@ -36,10 +36,6 @@ export default function CheckInfo({ setIsPending }) {
         }
     };
 
-    let obj1 = {a:1,b:2};
-    let obj2 = {...obj1,b:3};
-    console.log(obj2);
-
     return (
         <div className="Checkinfo mx-auto">
             <h5>訂單資訊</h5>
@@ -51,7 +47,8 @@ export default function CheckInfo({ setIsPending }) {
                         placeholder="請輸入姓名" 
                         name="name" 
                         value={formData.name} 
-                        onChange={handleChange} 
+                        onChange={handleChange}
+                        required 
                     />
                 </Form.Group>
                 <Form.Group className="mb-2" controlId="formTel">
@@ -61,7 +58,8 @@ export default function CheckInfo({ setIsPending }) {
                         placeholder="請輸入電話" 
                         name="tel" 
                         value={formData.tel} 
-                        onChange={handleChange} 
+                        onChange={handleChange}
+                        required  
                     />
                 </Form.Group>
                 <Form.Group className="mb-2" controlId="formAddress">
@@ -71,7 +69,8 @@ export default function CheckInfo({ setIsPending }) {
                         placeholder="請輸入地址" 
                         name="address" 
                         value={formData.address} 
-                        onChange={handleChange} 
+                        onChange={handleChange}
+                        required  
                     />
                 </Form.Group>
                 <Form.Group className="mb-2" controlId="formPay">
@@ -81,7 +80,8 @@ export default function CheckInfo({ setIsPending }) {
                         placeholder="請輸入現金或信用卡" 
                         name="pay" 
                         value={formData.pay} 
-                        onChange={handleChange} 
+                        onChange={handleChange}
+                        required  
                     />
                 </Form.Group>
                 <Form.Group className="mb-2" controlId="formNote">
@@ -91,7 +91,8 @@ export default function CheckInfo({ setIsPending }) {
                         rows={1} 
                         name="note" 
                         value={formData.note} 
-                        onChange={handleChange} 
+                        onChange={handleChange}
+                        required  
                     />
                 </Form.Group>
             </Form>

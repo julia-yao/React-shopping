@@ -41,7 +41,7 @@ export default function Order() {
     setTimeout(() => {
       navigate('/');
     }, 1000); // Numeric delay
-  };
+  }
 
   return (
     <div className='Order py-3'>

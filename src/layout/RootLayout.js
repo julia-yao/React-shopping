@@ -11,7 +11,7 @@ function RootLayout() {
     setLoading(true)
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 100);
   }, []);
   
   const changeBgColor = () => {
