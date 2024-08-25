@@ -4,48 +4,72 @@ import { useLoaderData } from 'react-router-dom';
 import { API_CARTS_GET_DATA, API_MEAL_GET_DATA } from "../../constants";
 import { useState } from "react";
 
-
 export default function MealDetails() {
-  
   const meal = useLoaderData();
   const [liked, setLiked] = useState(false);
   
-
   const handleAddCart = async (e)=>{
     let res=null;
-    let metd = 'POST';
-    let url = API_CARTS_GET_DATA;
-    let pUrl = url+meal.id;
-    let json = {id:meal.id, 
+    let metd = 'PUT';
+    //let url = 'https://testrepo-f0cc5-default-rtdb.asia-southeast1.firebasedatabase.app/carts.json';
+    //let pUrl = url+meal.id;
+    let baseUrl = 'https://testrepo-f0cc5-default-rtdb.asia-southeast1.firebasedatabase.app/carts';
+    let basePostfix='.json'; 
+    let cartUrl = baseUrl+basePostfix;
+    let userCartId = "/testUserId";
+    let pUrl = baseUrl+userCartId +basePostfix;//baseUrl+meal.id +basePostfix;
+    let json = [{
+                id:meal.id, 
                 quantity:1, 
                 name:meal.name,
                 price:meal.price,
                 url:meal.url
-              }
+              }];
+    
     //check if the meal is in cart
     await fetch(pUrl)
           .then(x=>{
             if(!x.ok)return;
             return x.json();
           })
-          .then(x=>res=x) 
-       
+          .then(x=>res=x);
+
+    console.log(res);
+
+    //if data exists
     if(res!=null){
       console.log("already in cart");
       json.quantity = res.quantity +1;
-      metd = 'PATCH';
-      url = pUrl;
+      //cartUrl = pUrl;
+
+      let IsMealInCart = false;
+      res.map((x,idx) => {
+        if(x.id === meal.id){
+          res[idx].quantity = res[idx].quantity+1;
+          IsMealInCart = true;
+        }
+      });
+
+      if(!IsMealInCart){
+        res.push({
+          id:meal.id, 
+          quantity:1, 
+          name:meal.name,
+          price:meal.price,
+          url:meal.url
+        });
+      }
+
+      json = res;
     }
 
-
-    fetch(url, {
+    fetch(pUrl, {
       method:metd,
       headers:{"Content-Type":"application/json"},
       body: JSON.stringify(json)
     }).then(() =>{
       console.log("carts added")
-      swal("成功!", "商品已加入購物車", "success");
-      
+      swal("成功!", "商品已加入購物車", "success");      
     })
   }
 
@@ -87,8 +111,10 @@ export default function MealDetails() {
 }
 export const mealDetailsLoader = async ({ params }) => {
   const { id } = params
-    
-  const res = await fetch( API_MEAL_GET_DATA + id)
+  const baseURI='https://testrepo-f0cc5-default-rtdb.asia-southeast1.firebasedatabase.app/';
+  const basePostfix='.json';  
+  const mealURI=baseURI+'meals/';
+  const res = await fetch( mealURI + id + basePostfix )
 
   if(!res.ok){
         throw Error ("無法找到您輸入的餐點。")
